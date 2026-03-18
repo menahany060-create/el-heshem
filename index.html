@@ -253,15 +253,15 @@ body{
 <p>اتأكد دايما ان ربنا هيديك على قد تعبك</p>
   <br>
   <div>
-    <button class="weightBtn" onclick="addToCart('توليفة الحشم','100 جم',90)">100 جم - 30ج</button>
-    <button class="weightBtn" onclick="addToCart('توليفة الحشم','200 جم',170)">200 جم - 55ج</button>
-    <button class="weightBtn" onclick="addToCart('توليفة الحشم','500 جم',350)">500 جم - 120ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الحشم','100 جم',90)"> جم 100- 90 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الحشم','200 جم',170)"> جم200 - 170 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الحشم','500 جم',350)"> جم 500- 350 جنيه</button>
   </div>
 
   <div class="cart" id="cartHashm">
     <h3>سلة مشترياتك</h3>
     <div id="cartItemsHashm"></div>
-    <div>الإجمالي: <span id="totalHashm">0</span> ج</div>
+    <div>الإجمالي: <span id="totalHashm">0</span> جنيه</div>
     <button onclick="checkout('hashm')">تأكيد الطلب</button>
   </div>
 
@@ -277,15 +277,15 @@ body{
     <p>بس ايوب صبر كل دا و قال الحمدلله لحد ما ربنا فرجها عليه و عوضه اضعاف</p>
   <br>
   <div>
-    <button class="weightBtn" onclick="addToCart('توليفة ايوب','100 جم',70)">100 جم - 30ج</button>
-    <button class="weightBtn" onclick="addToCart('توليفة ايوب','200 جم',130)">200 جم - 55ج</button>
-    <button class="weightBtn" onclick="addToCart('توليفة ايوب','500 جم',260)">500 جم - 120ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ايوب','100 جم',70)">جم 100- 90 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ايوب','200 جم',130)">جم200 - 170 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ايوب','500 جم',260)">جم 500- 350 جنيه</button>
   </div>
 
   <div class="cart" id="cartAyoub">
     <h3>سلة مشترياتك</h3>
     <div id="cartItemsAyoub"></div>
-    <div>الإجمالي: <span id="totalAyoub">0</span> ج</div>
+    <div>الإجمالي: <span id="totalAyoub">0</span> جنيه</div>
     <button onclick="checkout('ayoub')">تأكيد الطلب</button>
   </div>
 
@@ -303,15 +303,15 @@ body{
 توصل بالسلامه يا صحبي ❤️</p>
   <br>
   <div>
-    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','100 جم',70)">100 جم - 30ج</button>
-    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','200 جم',130)">200 جم - 55ج</button>
-    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','500 جم',260)">500 جم - 120ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','100 جم',70)">جم 100- 90 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','200 جم',130)">جم200 - 170 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','500 جم',260)">جم 500- 350 جنيه</button>
   </div>
 
   <div class="cart" id="cartSikka">
     <h3>سلة مشترياتك</h3>
     <div id="cartItemsSikka"></div>
-    <div>الإجمالي: <span id="totalSikka">0</span> ج</div>
+    <div>الإجمالي: <span id="totalSikka">0</span> جنيه</div>
     <button onclick="checkout('sikka')">تأكيد الطلب</button>
   </div>
 
@@ -327,15 +327,15 @@ body{
 <p>اشرب و افتكر ان توليفة الجدع مش لأى حد 😉</p>
   <br>
   <div>
-    <button class="weightBtn" onclick="addToCart('توليفة الجدع','100 جم',70)">100 جم - 30ج</button>
-    <button class="weightBtn" onclick="addToCart('توليفة الجدع','200 جم',130)">200 جم - 55ج</button>
-    <button class="weightBtn" onclick="addToCart('توليفة الجدع','500 جم',260)">500 جم - 120ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الجدع','100 جم',70)">جم 100- 90 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الجدع','200 جم',130)">جم200 - 170 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الجدع','500 جم',260)">جم 500- 350 جنيه</button>
   </div>
 
   <div class="cart" id="cartGad3">
     <h3>سلة مشترياتك</h3>
     <div id="cartItemsGad3"></div>
-    <div>الإجمالي: <span id="totalGad3">0</span> ج</div>
+    <div>الإجمالي: <span id="totalGad3">0</span> جنيه</div>
     <button onclick="checkout('gad3')">تأكيد الطلب</button>
   </div>
 
@@ -444,7 +444,7 @@ function sendWhatsApp(){
     let item = cart[key];
     text += item.product+" ("+item.weight+") x "+item.qty+" = "+(item.price*item.qty)+"ج\n";
   }
-  let url = "https://wa.me/201223136302?text="+encodeURIComponent(text);
+  let url = "https://wa.me/201066025845?text="+encodeURIComponent(text);
   window.open(url,"_blank");
 }
 
