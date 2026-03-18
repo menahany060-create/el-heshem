@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بن الحشم</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Tajawal', Arial, sans-serif;
+  text-align:center;
+  min-height:150vh;
+  display:flex;
+  flex-direction:column;
+  color:rgb(255, 255, 255);
+ 
+  background: url("1111.jpeg") no-repeat;
+  background-size:cover;
+  background-position: center; 
+}
+.header{
+  height: 320px;
+  background: rgba(0, 0, 0, 0.356);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+  padding-bottom:20px;
+  box-shadow:0 10px 30px black;
+}
+
+.header img{ 
+  height:210px;
+  margin-bottom:10px;
+}
+
+.logoText{
+  font-size:42px;
+  font-weight:bold;
+  background:rgba(0,0,0,.7);
+  padding:8px 25px;
+  border-radius:20px;
+  letter-spacing:2px;
+  text-shadow:0 0 10px #2600ff, 0 0 20px #1100ff;
+}
+
+.phone{
+  font-size:22px;
+  margin-top:8px;
+  background:#8c1d96;
+  padding:5px 20px;
+  border-radius:15px;
+  box-shadow:0 0 15px #04acfa;
+  text-shadow:0 0 5px black;
+}
+
+.container{
+  margin-top:60px;
+  flex:1;
+  animation:fade 1s;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+.mainBtn{
+  padding:18px 40px;
+  font-size:22px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#1181c2,#5c0fb4);
+  color:rgb(255, 255, 255);
+  cursor:pointer;
+  box-shadow:0 0 15px #ff5722, 0 0 30px #ff9800;
+  transition:.3s;
+  text-shadow:0 0 5px black;
+}
+
+.mainBtn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 25px #5511d3,0 0 50px #7508b4;
+}
+
+.menu{
+  display:none;
+  margin-top:40px;
+}
+
+.option{
+  display:block;
+  width:260px;
+  margin:15px auto;
+  padding:18px;
+  border-radius:25px;
+  text-decoration:none;
+  font-size:20px;
+  background:rgba(0,0,0,.5);
+  color:rgb(255, 255, 255);
+  transition:.3s;
+  box-shadow:0 0 10px #000, 0 0 15px #ff9800 inset;
+}
+
+.option:hover{
+  background:#ff5722;
+  transform:scale(1.1);
+  box-shadow:0 0 15px #ff9800,0 0 30px #ff5722 inset;
+}
+
+.page{
+  display:none;
+  margin-top:50px;
+  font-size:34px;
+  padding:20px;
+  text-shadow:0 0 5px black;
+}
+
+.back{
+  margin-top:20px;
+  padding:12px 30px;
+  border:none;
+  border-radius:20px;
+  font-size:18px;
+  background:#ff9800;
+  cursor:pointer;
+  box-shadow:0 0 15px #ff5722;
+  transition:.3s;
+}
+
+.back:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 25px #ff9800,0 0 40px #ff5722;
+}
+
+.footer{
+  background:rgba(0,0,0,.7);
+  padding:15px;
+  font-size:18px;
+  margin-top:auto;
+  letter-spacing:1px;
+  text-shadow:0 0 5px black;
+}
+
+.weightBtn{
+  margin:5px;
+  padding:10px 20px;
+  font-size:18px;
+  border:none;
+  border-radius:15px;
+  cursor:pointer;
+  background:linear-gradient(45deg,#ffa500,#ff4500);
+  color:white;
+  box-shadow:0 0 10px #000;
+  transition:.3s;
+}
+
+.weightBtn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #ff9800;
+}
+
+.cart{
+  margin-top:30px;
+  background:rgba(0,0,0,.6);
+  padding:15px;
+  border-radius:15px;
+  display:inline-block;
+  text-align:right;
+}
+
+.cartItem{
+  display:flex;
+  justify-content:space-between;
+  margin:5px 0;
+  padding:5px 10px;
+  background:rgba(255,255,255,.1);
+  border-radius:10px;
+}
+
+.cartItem span{
+  margin:0 5px;
+}
+
+.cartItem button{
+  padding:2px 8px;
+  margin-left:5px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#ff5722;
+  color:white;
+}
+
+#checkoutForm input{
+  display:block;
+  margin:10px auto;
+  padding:10px;
+  width:250px;
+  border-radius:10px;
+  border:none;
+}
+#checkoutForm button{
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:15px;
+  cursor:pointer;
+  background:#04acfa;
+  color:white;
+  box-shadow:0 0 15px #000;
+  transition:.3s;
+}
+#checkoutForm button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #04acfa;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="11111.jpeg" alt="بن الحشم">
+  <div class="logoText">بن الحشم</div>
+  <div class="phone">01067968244</div>
+</div>
+
+<div id="home" class="container">
+  <h1>انت دلوقتي بتشرب توليفة الحشم</h1>
+  <h2>عايز تعرف باقي التوليفات ؟</h2>
+  <button class="mainBtn" onclick="showMenu()">اختار توليفتك بنفسك</button>
+
+  <div id="menu" class="menu">
+    <a class="option" href="#" onclick="openPage('hashm')">توليفة الحشم</a>
+    <a class="option" href="#" onclick="openPage('ayoub')">توليفة ايوب</a>
+    <a class="option" href="#" onclick="openPage('sikka')">توليفة ع السكه</a>
+    <a class="option" href="#" onclick="openPage('gad3')">توليفة الجدع</a>
+  </div>
+</div>
+
+<!-- توليفة الحشم مع اختيارات الوزن والسلة -->
+<div id="hashm" class="page">
+  <h2>توليفة الحشم</h2>
+   No pain...no gain
+<p>مفيش حاجه هتجيلك لحد عندك</p>
+<p>اسعى و اجتهد لحد ما تحقق احلامك</p>
+<p>و اوعى تيأس لأن مفيش حلاوه من غير نار</p>
+<p>اتأكد دايما ان ربنا هيديك على قد تعبك</p>
+  <br>
+  <div>
+    <button class="weightBtn" onclick="addToCart('توليفة الحشم','100 جم',90)">100 جم - 30ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الحشم','200 جم',170)">200 جم - 55ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الحشم','500 جم',350)">500 جم - 120ج</button>
+  </div>
+
+  <div class="cart" id="cartHashm">
+    <h3>سلة مشترياتك</h3>
+    <div id="cartItemsHashm"></div>
+    <div>الإجمالي: <span id="totalHashm">0</span> ج</div>
+    <button onclick="checkout('hashm')">تأكيد الطلب</button>
+  </div>
+
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<!-- توليفة ايوب -->
+<div id="ayoub" class="page">
+  <h2>توليفة ايوب</h2>
+   اشرب الصبر...واستمتع بالفرج
+    <p>سيدنا أيوب كان غني و عندو أولاد و صحه و فلوس مبتخلصش</p>
+    <p>!و ربنا ابتلاه بخسارة فلوسه و موت اولاده و مرض استمر معاه ١٨ سنه بحالهم </p>
+    <p>بس ايوب صبر كل دا و قال الحمدلله لحد ما ربنا فرجها عليه و عوضه اضعاف</p>
+  <br>
+  <div>
+    <button class="weightBtn" onclick="addToCart('توليفة ايوب','100 جم',70)">100 جم - 30ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ايوب','200 جم',130)">200 جم - 55ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ايوب','500 جم',260)">500 جم - 120ج</button>
+  </div>
+
+  <div class="cart" id="cartAyoub">
+    <h3>سلة مشترياتك</h3>
+    <div id="cartItemsAyoub"></div>
+    <div>الإجمالي: <span id="totalAyoub">0</span> ج</div>
+    <button onclick="checkout('ayoub')">تأكيد الطلب</button>
+  </div>
+
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<!-- توليفة ع السكه -->
+<div id="sikka" class="page">
+  <h2>توليفة ع السكه</h2>
+   استمتع بالرحله...السكه طويله
+<p>مسافر و سكتك طويله؟</p>
+<p>مفيش حاجه هتفوقك كل دا غير كباية القهوه الزياده</p>
+<p>اشرب و صحصح لطريقك </p>
+<p>
+توصل بالسلامه يا صحبي ❤️</p>
+  <br>
+  <div>
+    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','100 جم',70)">100 جم - 30ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','200 جم',130)">200 جم - 55ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','500 جم',260)">500 جم - 120ج</button>
+  </div>
+
+  <div class="cart" id="cartSikka">
+    <h3>سلة مشترياتك</h3>
+    <div id="cartItemsSikka"></div>
+    <div>الإجمالي: <span id="totalSikka">0</span> ج</div>
+    <button onclick="checkout('sikka')">تأكيد الطلب</button>
+  </div>
+
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<!-- توليفة الجدع -->
+<div id="gad3" class="page">
+  <h2>توليفة الجدع</h2>
+ توليفة الجدع ...لكل راجل جدع
+<p>مفيش راجل جدع مش بيشرب قهوه</p>
+<p>و قهوته مش بتبقى اى قهوه</p>
+<p>اشرب و افتكر ان توليفة الجدع مش لأى حد 😉</p>
+  <br>
+  <div>
+    <button class="weightBtn" onclick="addToCart('توليفة الجدع','100 جم',70)">100 جم - 30ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الجدع','200 جم',130)">200 جم - 55ج</button>
+    <button class="weightBtn" onclick="addToCart('توليفة الجدع','500 جم',260)">500 جم - 120ج</button>
+  </div>
+
+  <div class="cart" id="cartGad3">
+    <h3>سلة مشترياتك</h3>
+    <div id="cartItemsGad3"></div>
+    <div>الإجمالي: <span id="totalGad3">0</span> ج</div>
+    <button onclick="checkout('gad3')">تأكيد الطلب</button>
+  </div>
+
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<!-- صفحة تأكيد الطلب -->
+<div id="checkoutPage" class="page">
+  <h2>تأكيد الطلب</h2>
+  <form id="checkoutForm">
+    <input type="text" id="customerName" placeholder="الاسم" required>
+    <input type="text" id="customerAddress" placeholder="العنوان" required>
+    <button type="button" onclick="sendWhatsApp()">ارسال على واتس</button>
+  </form>
+  <button class="back" onclick="goHome()">رجوع</button>
+</div>
+
+<div class="footer">
+  شركة سميركو للتعبئه و التغليف
+</div>
+
+<script>
+let cart = {};
+
+function showMenu(){
+  document.getElementById("menu").style.display="block";
+}
+
+function openPage(page){
+  document.getElementById("home").style.display="none";
+  document.getElementById("hashm").style.display="none";
+  document.getElementById("ayoub").style.display="none";
+  document.getElementById("sikka").style.display="none";
+  document.getElementById("gad3").style.display="none";
+  document.getElementById("checkoutPage").style.display="none";
+
+  document.getElementById(page).style.display="block";
+}
+
+function goHome(){
+  document.getElementById("home").style.display="block";
+  document.getElementById("hashm").style.display="none";
+  document.getElementById("ayoub").style.display="none";
+  document.getElementById("sikka").style.display="none";
+  document.getElementById("gad3").style.display="none";
+  document.getElementById("checkoutPage").style.display="none";
+}
+
+function addToCart(product, weight, price){
+  let key = product + " - " + weight;
+  if(cart[key]){
+    cart[key].qty +=1;
+  } else {
+    cart[key] = {product, weight, price, qty:1};
+  }
+  updateCartUI();
+}
+
+function updateCartUI(){
+  ['hashm','ayoub','sikka','gad3'].forEach(page=>{
+    let cartDiv = document.getElementById("cartItems"+capitalize(page));
+    let totalSpan = document.getElementById("total"+capitalize(page));
+    cartDiv.innerHTML="";
+    let total=0;
+    for(let key in cart){
+      if(key.includes(getProductName(page))){
+        let item = cart[key];
+        let div = document.createElement("div");
+        div.className="cartItem";
+        div.innerHTML=`<span>${item.product} (${item.weight}) x ${item.qty}</span>
+        <span>${item.price*item.qty}ج</span>
+        <button onclick="changeQty('${key}',-1)">-</button>
+        <button onclick="changeQty('${key}',1)">+</button>
+        <button onclick="removeItem('${key}')">حذف</button>`;
+        cartDiv.appendChild(div);
+        total += item.price*item.qty;
+      }
+    }
+    totalSpan.innerText = total;
+  });
+}
+
+function changeQty(key, val){
+  cart[key].qty += val;
+  if(cart[key].qty<=0){
+    delete cart[key];
+  }
+  updateCartUI();
+}
+
+function removeItem(key){
+  delete cart[key];
+  updateCartUI();
+}
+
+function checkout(page){
+  document.getElementById("checkoutPage").style.display="block";
+}
+
+function sendWhatsApp(){
+  let name = document.getElementById("customerName").value;
+  let address = document.getElementById("customerAddress").value;
+  if(!name || !address){alert("من فضلك املأ الاسم و العنوان"); return;}
+  let text = "الطلب من "+name+"\nالعنوان: "+address+"\n\n";
+  for(let key in cart){
+    let item = cart[key];
+    text += item.product+" ("+item.weight+") x "+item.qty+" = "+(item.price*item.qty)+"ج\n";
+  }
+  let url = "https://wa.me/201066025845?text="+encodeURIComponent(text);
+  window.open(url,"_blank");
+}
+
+function capitalize(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function getProductName(page){
+  switch(page){
+    case 'hashm': return 'توليفة الحشم';
+    case 'ayoub': return 'توليفة ايوب';
+    case 'sikka': return 'توليفة ع السكه';
+    case 'gad3': return 'توليفة الجدع';
+  }
+}
+</script>
+<style>
+/* 1️⃣ خلفية متحركة فخمة */
+body::before {
+  content: "";
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: linear-gradient(270deg, #1a1a1a, #4b0082, #000000, #1a1a1a);
+  background-size: 800% 800%;
+  z-index: -1;
+  animation: gradientMove 20s ease infinite;
+  filter: blur(30px);
+  opacity:0.7;
+}
+
+@keyframes gradientMove {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* 2️⃣ زرار تأكيد الطلب نيون */
+#checkoutForm button {
+  background: #04acfa;
+  color: #fff;
+  box-shadow: 0 0 10px #04acfa, 0 0 20px #04acfa, 0 0 30px #00f0ff, 0 0 40px #00f0ff inset;
+  border:none;
+  border-radius:15px;
+  transition: 0.3s;
+}
+
+#checkoutForm button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #04acfa, 0 0 40px #00f0ff, 0 0 60px #00f0ff inset;
+}
+</style>
+</body>
+</html>
