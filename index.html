@@ -16,6 +16,7 @@ body{
   display:flex;
   flex-direction:column;
   color:rgb(255, 255, 255);
+  line-height:1.6;
  
   background: url("coff.webp") no-repeat;
   background-size:cover;
@@ -256,6 +257,9 @@ animation:neonMove 2.5s infinite;
   <h1>كافيين عالي+طعم مظبوط = يوم يتلعب صح</h1>
   <h2>عايز تعرف التوليفات ؟</h2>
   <button class="mainBtn" onclick="showMenu()">اختار توليفتك بنفسك</button>
+  <br>
+  <br>
+  <button class="mainBtn" onclick="openStorePopup()">منافذ البيع</button>
 
   <div id="menu" class="menu">
     <a class="option" href="#" onclick="openPage('hashm')">توليفة الحشم</a>
@@ -292,23 +296,22 @@ animation:neonMove 2.5s infinite;
 </table>
 
 </div>
-   No pain...no gain
-<p>مفيش حاجه هتجيلك لحد عندك</p>
-<p>اسعى و اجتهد لحد ما تحقق احلامك</p>
-<p>و اوعى تيأس لأن مفيش حلاوه من غير نار</p>
-<p>اتأكد دايما ان ربنا هيديك على قد تعبك</p>
+<button class="story-btn" onclick="openStory(
+'No Pain...No Gain',
+'مفيش حاجه هتجيلك لحد عندك ، اسعى و اجتهد و ربنا هيديك على قد تعبك ، و اوعي تيأس لأن مفيش حلاوه من غير نار ، عايزك تتأكد دايما ان ربنا هيديك على قد تعبك_ و احنا عملنالك التوليفه الى هتخليك تكمل مشوارك ب اقصى طاقه ممكنه 💪🏻واعلى كافيين ممكن🔥 '
+)">ليه تشرب توليفة الحشم ؟</button>
+ 
   <br>
   <div>
-    <button class="weightBtn" onclick="addToCart('توليفة الحشم','100 جم',90)"> جم 100- 90 جنيه</button>
-    <button class="weightBtn" onclick="addToCart('توليفة الحشم','200 جم',170)"> جم200 - 170 جنيه</button>
-    <button class="weightBtn" onclick="addToCart('توليفة الحشم','500 جم',350)"> جم 500- 350 جنيه</button>
+   
+    <button class="weightBtn" onclick="addToCart('توليفة الحشم','500 جم',0)"> جم 500- 0 جنيه</button>
   </div>
 
   <div class="cart" id="cartHashm">
     <h3>سلة مشترياتك</h3>
     <div id="cartItemsHashm"></div>
     <div>الإجمالي: <span id="totalHashm">0</span> جنيه</div>
-    <button onclick="checkout('hashm')">تأكيد الطلب</button>
+    <button class="confirm-btn" onclick="checkout('hashm')">تأكيد الطلب</button>
   </div>
 
   <button class="back" onclick="goHome()">رجوع</button>
@@ -341,22 +344,21 @@ animation:neonMove 2.5s infinite;
 </table>
 
 </div>
-   اشرب الصبر...واستمتع بالفرج
-    <p>سيدنا أيوب كان غني و عندو أولاد و صحه و فلوس مبتخلصش</p>
-    <p>!و ربنا ابتلاه بخسارة فلوسه و موت اولاده و مرض استمر معاه ١٨ سنه بحالهم </p>
-    <p>بس ايوب صبر كل دا و قال الحمدلله لحد ما ربنا فرجها عليه و عوضه اضعاف</p>
+<button class="story-btn" onclick="openStory(
+'اشرب الصبر و استمتع بالفرج ',
+'سيدنا ايوب كان غني و عندو اولاد و صحه و فلوس مبتخلصش ، و ربنا ابتلاه بخسارة فلوسه و موت اولاده و مرض استمر معاه ١٨ سنه بحالهم! ، بس سيدنا ايوب صبر كل دا و قال الحمدلله لحد ما ربنا فرجها عليه و عوضه اضعاف _ و احنا عملنالك توليفة ايوب عشان تساعدك على الصبر ف حياتك ، و افتكر دايما ان الصبر هو مفتاح الفرج ❤️'
+)">ليه تشرب توليفة أيوب ؟</button>
+  
   <br>
   <div>
-    <button class="weightBtn" onclick="addToCart('توليفة ايوب','100 جم',70)">جم 100- 90 جنيه</button>
-    <button class="weightBtn" onclick="addToCart('توليفة ايوب','200 جم',130)">جم200 - 170 جنيه</button>
-    <button class="weightBtn" onclick="addToCart('توليفة ايوب','500 جم',260)">جم 500- 350 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ايوب','500 جم',0)">جم 500- 0 جنيه</button>
   </div>
 
   <div class="cart" id="cartAyoub">
     <h3>سلة مشترياتك</h3>
     <div id="cartItemsAyoub"></div>
     <div>الإجمالي: <span id="totalAyoub">0</span> جنيه</div>
-    <button onclick="checkout('ayoub')">تأكيد الطلب</button>
+   <button class="confirm-btn" onclick="checkout('ayoub')">تأكيد الطلب</button>
   </div>
 
   <button class="back" onclick="goHome()">رجوع</button>
@@ -389,24 +391,21 @@ animation:neonMove 2.5s infinite;
 </table>
 
 </div>
-   استمتع بالرحله...السكه طويله
-<p>مسافر و سكتك طويله؟</p>
-<p>مفيش حاجه هتفوقك كل دا غير كباية القهوه الزياده</p>
-<p>اشرب و صحصح لطريقك </p>
-<p>
-توصل بالسلامه يا صحبي ❤️</p>
+<button class="story-btn" onclick="openStory(
+' استمتع بالرحله...السكه طويله',
+'مسافر و سكتك طويله ؟ مفيش حاجه هتفوقك غير كباية القهوه الزياده _ و اخنا عملنالك توليفة ع السكه عشان تساعدك تركز لوقت اطول ف رحلتك ، اشرب و صحصح لطريقك ، توصل بالسلامه يا صديقي ❤️'
+)">ليه تشرب توليفة ع السكة ؟</button>
+  
   <br>
   <div>
-    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','100 جم',70)">جم 100- 90 جنيه</button>
-    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','200 جم',130)">جم200 - 170 جنيه</button>
-    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','500 جم',260)">جم 500- 350 جنيه</button>
+    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','500 جم',0)">جم 500- 0 جنيه</button>
   </div>
 
   <div class="cart" id="cartSikka">
     <h3>سلة مشترياتك</h3>
     <div id="cartItemsSikka"></div>
     <div>الإجمالي: <span id="totalSikka">0</span> جنيه</div>
-    <button onclick="checkout('sikka')">تأكيد الطلب</button>
+   <button class="confirm-btn" onclick="checkout('sikka')">تأكيد الطلب</button>
   </div>
 
   <button class="back" onclick="goHome()">رجوع</button>
@@ -439,22 +438,23 @@ animation:neonMove 2.5s infinite;
 </table>
 
 </div>
- توليفة الجدع ...لكل راجل جدع
-<p>مفيش راجل جدع مش بيشرب قهوه</p>
-<p>و قهوته مش بتبقى اى قهوه</p>
-<p>اشرب و افتكر ان توليفة الجدع مش لأى حد 😉</p>
+<button class="story-btn" onclick="openStory(
+' توليفة الجدع ...لكل راجل جدع',
+'مفيش راجل جدع مش بيشرب قهوه ، و قهوته مش بتبقى اى قهوه _ و احنا عملنالك التوليفه بتاعة الجدعان ، اشرب و افتكر ان توليفة الجدع مش لأي حد 😉'
+)">'ليه تشرب توليفة الجدع؟</button>
+
+
   <br>
   <div>
-    <button class="weightBtn" onclick="addToCart('توليفة الجدع','100 جم',70)">جم 100- 90 جنيه</button>
-    <button class="weightBtn" onclick="addToCart('توليفة الجدع','200 جم',130)">جم200 - 170 جنيه</button>
-    <button class="weightBtn" onclick="addToCart('توليفة الجدع','500 جم',260)">جم 500- 350 جنيه</button>
+    
+    <button class="weightBtn" onclick="addToCart('توليفة الجدع','500 جم',0)">جم 500- 0 جنيه</button>
   </div>
 
   <div class="cart" id="cartGad3">
     <h3>سلة مشترياتك</h3>
     <div id="cartItemsGad3"></div>
     <div>الإجمالي: <span id="totalGad3">0</span> جنيه</div>
-    <button onclick="checkout('gad3')">تأكيد الطلب</button>
+  <button class="confirm-btn" onclick="checkout('gad3')">تأكيد الطلب</button>
   </div>
 
   <button class="back" onclick="goHome()">رجوع</button>
@@ -566,7 +566,7 @@ function sendWhatsApp(){
     let item = cart[key];
     text += item.product+" ("+item.weight+") x "+item.qty+" = "+(item.price*item.qty)+"جنيه\n";
   }
-  let url = "https://wa.me/201223136302?text="+encodeURIComponent(text);
+  let url = "https://wa.me/20123136302?text="+encodeURIComponent(text);
   window.open(url,"_blank");
 }
 
@@ -580,8 +580,30 @@ function getProductName(page){
   }
 }
 </script>
+<script>
+function openStory(title, text){
+  document.getElementById("popupTitle").innerText = title;
+  document.getElementById("popupText").innerText = text;
+  document.getElementById("popup").classList.add("active");
+}
+
+function closeStory(){
+  document.getElementById("popup").classList.remove("active");
+}
+
+/* يقفل لما تدوس بره */
+document.addEventListener("click", function(e){
+  let popup = document.getElementById("popup");
+  if(e.target === popup){
+    closeStory();
+  }
+});
+</script>
 <style>
-/* 1️⃣ خلفية متحركة فخمة */
+  *{
+  box-sizing: border-box;
+}
+/*  خلفية متحركة فخمة */
 body::before {
   content: "";
   position: fixed;
@@ -601,7 +623,7 @@ body::before {
   100%{background-position:0% 50%;}
 }
 
-/* 2️⃣ زرار تأكيد الطلب نيون */
+/*  زرار تأكيد الطلب نيون */
 #checkoutForm button {
   background: #04acfa;
   color: #fff;
@@ -651,7 +673,7 @@ padding:12px;
 border-bottom:1px solid rgba(255,255,255,.15);
 }
 
-/* 🔥 بار قوة الكافيين */
+/*  بار قوة الكافيين */
 .caffeineBar{
 width:85%;
 height:22px;
@@ -674,6 +696,334 @@ animation:barMove 3s linear infinite;
 0%{background-position:0%;}
 100%{background-position:300%;}
 }
+/*  popup blur + fade */
+.popup {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(0px);
+
+  opacity:0;
+  visibility:hidden;
+  transition: all 0.4s ease;
+  z-index:9999;
+}
+
+.popup.active{
+  opacity:1;
+  visibility:visible;
+  backdrop-filter: blur(8px);
+}
+
+.popup-content{
+  background:#111;
+  color:#fff;
+  padding:20px;
+  border-radius:15px;
+  width:85%;
+  max-width:400px;
+  text-align:center;
+
+  transform: scale(0.8);
+  transition:0.4s;
+  box-shadow:0 0 25px #00f0ff;
+}
+
+.popup.active .popup-content{
+  transform: scale(1);
+}
+
+.close-popup{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.story-btn{
+  margin-top:15px;
+  padding:20px 35px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  color:white;
+  background:transparent;
+  border:2px solid #00f0ff;
+  box-shadow:0 0 10px #00f0ff,0 0 20px #00f0ff;
+  transition:0.3s;
+}
+
+.story-btn:hover{
+  box-shadow:0 0 20px #00f0ff,0 0 40px #00f0ff;
+}
+.popup-content p{
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+.popup-content{
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.story-btn{
+  font-size: 22px;
+  font-weight: bold;
+}
+.confirm-btn{
+  background: transparent;
+  color: #00f0ff;
+  border: 2px solid #00f0ff;
+  padding: 10px 25px;
+  font-size: 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  transition: 0.3s;
+}
+
+.confirm-btn:hover{
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+  transform: scale(1.05);
+}
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+@media (max-width: 600px){
+  .header{ height: 300px; padding-bottom:10px; }
+  .header img{ height:180px; }
+  .logoText{ font-size:28px; padding:6px 15px; }
+  .phone{ font-size:16px; padding:4px 12px; }
+
+  h1{ font-size:22px; padding:0 10px; }
+  h2{ font-size:18px; }
+
+  .mainBtn{ width:90%; font-size:18px; padding:14px; }
+  .option{ width:90%; font-size:18px; padding:14px; }
+
+  .page{ font-size:22px; padding:10px; }
+
+  .coffee-img{ width:95%; }
+  .coffee-table{ width:95%; font-size:14px; }
+
+  .weightBtn{ width:90%; font-size:16px; padding:10px; }
+
+  .cart{ width:95%; font-size:14px; }
+
+  .cartItem{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+  }
+
+  #checkoutForm input{ width:90%; }
+  #checkoutForm button{ width:90%; }
+
+  .popup-content{ width:90%; font-size:14px; }
+}
 </style>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-popup" onclick="closeStory()">&times;</span>
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+  </div>
+</div>
+<script>
+function openStory(title, text){
+  let popup = document.getElementById("popup");
+
+  if(!popup){
+    popup = document.createElement("div");
+    popup.id = "popup";
+    popup.className = "popup";
+    popup.innerHTML = `
+      <div class="popup-content" onclick="event.stopPropagation()">
+        <span class="close-popup" onclick="closeStory()">&times;</span>
+        <h2 id="popupTitle"></h2>
+        <p id="popupText"></p>
+      </div>
+    `;
+    document.body.appendChild(popup);
+
+    popup.addEventListener("click", closeStory);
+  }
+
+  document.getElementById("popupTitle").innerText = title;
+
+  popup.classList.add("active");
+
+  typeWriter(text, document.getElementById("popupText"));
+}
+
+function closeStory(){
+  const popup = document.getElementById("popup");
+  if(popup) popup.classList.remove("active");
+}
+
+/* ===== typing animation ===== */
+function typeWriter(text, element){
+  element.innerText = "";
+  let i = 0;
+
+  function typing(){
+    if(i < text.length){
+      element.innerText += text.charAt(i);
+      i++;
+      setTimeout(typing, 50); // السرعة
+    }
+  }
+
+  typing();
+}
+</script>
+<div id="storePopup" class="popup">
+  <div class="popup-content" onclick="event.stopPropagation()">
+    
+    <span class="close-popup" onclick="closeStorePopup()">&times;</span>
+
+    <h2>منافذ البيع</h2>
+
+    <select id="governorate" onchange="updateCities()">
+      <option value="">-- اختر المحافظة --</option>
+    </select>
+
+    <select id="city" onchange="showStores()">
+      <option value="">-- اختر المدينة --</option>
+    </select>
+
+    <div id="stores"></div>
+
+  </div>
+</div>
+<script>
+// فتح وقفل
+function openStorePopup() {
+  document.getElementById("storePopup").classList.add("active");
+}
+
+function closeStorePopup() {
+  document.getElementById("storePopup").classList.remove("active");
+}
+
+// البيانات
+const data = {
+  "القاهرة": ["مدينة نصر","التجمع الخامس","المعادي","حلوان","عين شمس","المطرية","الزيتون","شبرا","روض الفرج","السلام","المرج","البساتين","دار السلام","الشروق","بدر"],
+  
+  "الجيزة": ["الدقي","المهندسين","الهرم","فيصل","العمرانية","6 أكتوبر","الشيخ زايد","الحوامدية","البدرشين","العياط","أوسيم","كرداسة"],
+
+  "الإسكندرية": ["سيدي جابر","سموحة","العجمي","المنتزه","ميامي","العصافرة","لوران","محرم بك","القباري"],
+
+  "الغربية": ["طنطا","المحلة الكبرى","كفر الزيات","زفتى","سمنود","بسيون","قطور"],
+
+  "الدقهلية": ["المنصورة","طلخا","ميت غمر","دكرنس","أجا","السنبلاوين","المنزلة","بلقاس","شربين"],
+
+  "الشرقية": ["الزقازيق","العاشر من رمضان","بلبيس","منيا القمح","أبو كبير","فاقوس","الحسينية","أولاد صقر"],
+
+  "القليوبية": ["بنها","شبرا الخيمة","قليوب","القناطر الخيرية","طوخ","شبين القناطر","الخانكة","كفر شكر"],
+
+  "المنوفية": ["شبين الكوم","السادات","منوف","أشمون","الباجور","قويسنا","تلا","بركة السبع"],
+
+  "كفر الشيخ": ["كفر الشيخ","دسوق","فوه","مطوبس","بيلا","الحامول","الرياض","سيدي سالم"],
+
+  "البحيرة": ["دمنهور","كفر الدوار","رشيد","إدكو","أبو حمص","الدلنجات","المحمودية","إيتاي البارود"],
+
+  "الفيوم": ["الفيوم","سنورس","إطسا","طامية","يوسف الصديق"],
+
+  "بني سويف": ["بني سويف","الواسطى","ناصر","إهناسيا","ببا","سمسطا","الفشن"],
+
+  "المنيا": ["المنيا","ملوي","سمالوط","بني مزار","مطاي","أبو قرقاص","دير مواس"],
+
+  "أسيوط": ["أسيوط","ديروط","منفلوط","القوصية","أبنوب","أبو تيج","الغنايم","ساحل سليم"],
+
+  "سوهاج": ["سوهاج","جرجا","المراغة","طما","طهطا","أخميم","البلينا","دار السلام"],
+
+  "قنا": ["قنا","نجع حمادي","دشنا","قفط","قوص","نقادة","فرشوط","أبو تشت"],
+
+  "الأقصر": ["الأقصر","إسنا","أرمنت","البياضية","الزينية"],
+
+  "أسوان": ["أسوان","إدفو","كوم أمبو","دراو","نصر النوبة"],
+
+  "البحر الأحمر": ["الغردقة","رأس غارب","سفاجا","القصير","مرسى علم","الشلاتين"],
+
+  "شمال سيناء": ["العريش","الشيخ زويد","رفح","بئر العبد"],
+
+  "جنوب سيناء": ["شرم الشيخ","دهب","نويبع","طابا","رأس سدر","أبو رديس","أبو زنيمة"],
+
+  "مطروح": ["مرسى مطروح","الحمام","العلمين","الضبعة","سيوة"],
+
+  "الوادي الجديد": ["الخارجة","الداخلة","الفرافرة","باريس"],
+
+  "الإسماعيلية": ["الإسماعيلية","فايد","القنطرة شرق","القنطرة غرب","التل الكبير"],
+
+  "السويس": ["السويس","الأربعين","عتاقة","الجناين"],
+
+  "بورسعيد": ["بورسعيد","بورفؤاد"],
+
+  "دمياط": ["دمياط","رأس البر","فارسكور","الزرقا","كفر سعد"]
+};
+
+// تحميل المحافظات
+window.addEventListener("load", function() {
+  let gov = document.getElementById("governorate");
+
+  for (let g in data) {
+    gov.innerHTML += `<option value="${g}">${g}</option>`;
+  }
+});
+
+// المدن
+function updateCities() {
+  let gov = document.getElementById("governorate").value;
+  let city = document.getElementById("city");
+
+  city.innerHTML = '<option value="">-- اختر المدينة --</option>';
+
+  if (data[gov]) {
+    data[gov].forEach(c => {
+      city.innerHTML += `<option value="${c}">${c}</option>`;
+    });
+  }
+}
+
+// المنافذ
+function showStores() {
+  let city = document.getElementById("city").value;
+  let storesDiv = document.getElementById("stores");
+
+  let stores = {
+    "أبو تيج":[
+       "شيخ العطارين - شارع الجلاء امام البنك الاهلي",
+       "هاني ماركت - طريق اسيوط سوهاج قبل المطافي الجديدة",
+      ],
+   
+    "أسيوط": [" جامعة اسيوط - smile كافيتيريا"]
+  };
+
+  storesDiv.innerHTML = "";
+
+  if (stores[city]) {
+    stores[city].forEach(s => {
+      storesDiv.innerHTML += `<p>📍 ${s}</p>`;
+    });
+  } else {
+    storesDiv.innerHTML = "<p>لا يوجد منافذ حالياً</p>";
+  }
+}
+
+// يقفل لما تدوس بره
+document.getElementById("storePopup")?.addEventListener("click", closeStorePopup);
+</script>
 </body>
 </html>
