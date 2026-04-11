@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+٠<!DOCTYPE html>
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
@@ -8,603 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:'Tajawal', Arial, sans-serif;
-  text-align:center;
-  min-height:150vh;
-  display:flex;
-  flex-direction:column;
-  color:rgb(255, 255, 255);
-  line-height:1.6;
- 
-  background: url("coff.webp") no-repeat;
-  background-size:cover;
-  background-position: center; 
-}
-.header{
-  height: 420px;
-  background: rgba(0, 0, 0, 0.356);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  align-items:center;
-  padding-bottom:20px;
-  box-shadow:0 10px 30px black;
-}
-
-.header img{ 
-  height:280px;
-  margin-bottom:10px;
-}
-
-.logoText{
-  font-size:42px;
-  font-weight:bold;
-  background:rgba(0,0,0,.7);
-  padding:8px 25px;
-  border-radius:20px;
-  letter-spacing:2px;
-  text-shadow:0 0 10px #2600ff, 0 0 20px #1100ff;
-}
-
-.phone{
-  font-size:22px;
-  margin-top:8px;
-  background:#8c1d96;
-  padding:5px 20px;
-  border-radius:15px;
-  box-shadow:0 0 15px #04acfa;
-  text-shadow:0 0 5px black;
-}
-
-.container{
-  margin-top:60px;
-  flex:1;
-  animation:fade 1s;
-}
-
-@keyframes fade{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-.mainBtn{
-  padding:18px 40px;
-  font-size:22px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(45deg,#1181c2,#5c0fb4);
-  color:rgb(255, 255, 255);
-  cursor:pointer;
-  box-shadow:0 0 15px #ff5722, 0 0 30px #ff9800;
-  transition:.3s;
-  text-shadow:0 0 5px black;
-}
-
-.mainBtn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 25px #5511d3,0 0 50px #7508b4;
-}
-
-.menu{
-  display:none;
-  margin-top:40px;
-}
-
-.option{
-  display:block;
-  width:260px;
-  margin:15px auto;
-  padding:18px;
-  border-radius:25px;
-  text-decoration:none;
-  font-size:20px;
-  background:rgba(0,0,0,.5);
-  color:rgb(255, 255, 255);
-  transition:.3s;
-  box-shadow:0 0 10px #000, 0 0 15px #ff9800 inset;
-}
-
-.option:hover{
-  background:#ff5722;
-  transform:scale(1.1);
-  box-shadow:0 0 15px #ff9800,0 0 30px #ff5722 inset;
-}
-
-.page{
-  display:none;
-  margin-top:50px;
-  font-size:34px;
-  padding:20px;
-  text-shadow:0 0 5px black;
-}
-
-.back{
-  margin-top:20px;
-  padding:12px 30px;
-  border:none;
-  border-radius:20px;
-  font-size:18px;
-  background:#ff9800;
-  cursor:pointer;
-  box-shadow:0 0 15px #ff5722;
-  transition:.3s;
-}
-
-.back:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 25px #ff9800,0 0 40px #ff5722;
-}
-
-.footer{
-  background:rgba(0,0,0,.7);
-  padding:15px;
-  font-size:10px;
-  margin-top:auto;
-  letter-spacing:1px;
-  text-shadow:0 0 5px black;
-}
-
-.weightBtn{
-  margin:5px;
-  padding:10px 20px;
-  font-size:18px;
-  border:none;
-  border-radius:15px;
-  cursor:pointer;
-  background:linear-gradient(45deg,#ffa500,#ff4500);
-  color:white;
-  box-shadow:0 0 10px #000;
-  transition:.3s;
-}
-
-.weightBtn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px #ff9800;
-}
-
-.cart{
-  margin-top:30px;
-  background:rgba(0,0,0,.6);
-  padding:15px;
-  border-radius:15px;
-  display:inline-block;
-  text-align:right;
-}
-
-.cartItem{
-  display:flex;
-  justify-content:space-between;
-  margin:5px 0;
-  padding:5px 10px;
-  background:rgba(255,255,255,.1);
-  border-radius:10px;
-}
-
-.cartItem span{
-  margin:0 5px;
-}
-
-.cartItem button{
-  padding:2px 8px;
-  margin-left:5px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  background:#ff5722;
-  color:white;
-}
-
-#checkoutForm input{
-  display:block;
-  margin:10px auto;
-  padding:10px;
-  width:250px;
-  border-radius:10px;
-  border:none;
-}
-#checkoutForm button{
-position:relative;
-overflow:hidden;
-background:#04acfa;
-color:white;
-border:none;
-border-radius:15px;
-padding:12px 25px;
-font-size:18px;
-box-shadow:0 0 15px #04acfa;
-}
-
-#checkoutForm button::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,.7),transparent);
-animation:neonMove 2.5s infinite;
-}
-
-@keyframes neonMove{
-0%{left:-100%;}
-100%{left:100%;}
-}
-#checkoutForm button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #04acfa;
-}
-
-
-@keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-  <img src="logo.png" alt="بن الحشم">
-  <div class="logoText">بن الحشم</div>
-  <div class="phone">01067968244</div>
-</div>
-
-<div id="home" class="container">
-  <h1>كافيين عالي+طعم مظبوط = يوم يتلعب صح</h1>
-  <h2>عايز تعرف التوليفات ؟</h2>
-  <button class="mainBtn" onclick="showMenu()">اختار توليفتك بنفسك</button>
-  <br>
-  <br>
-  <button class="mainBtn" onclick="openStorePopup()">منافذ البيع</button>
-
-  <div id="menu" class="menu">
-    <a class="option" href="#" onclick="openPage('hashm')">توليفة الحشم</a>
-    <a class="option" href="#" onclick="openPage('ayoub')">توليفة ايوب</a>
-    <a class="option" href="#" onclick="openPage('sikka')">توليفة ع السكه</a>
-    <a class="option" href="#" onclick="openPage('gad3')">توليفة الجدع</a>
-  </div>
-</div>
-
-<!-- توليفة الحشم مع اختيارات الوزن والسلة -->
-<div id="hashm" class="page">
-  <h2>توليفة الحشم</h2>
-  <div class="coffee-info">
-
-<img src="hashm.png" class="coffee-img">
-
-<div>(عالي)قوة الكافيين</div>
-<p>%نسبة الكافيين:90</p>
-<div class="caffeineBar">
-<div class="caffeineFill" style="width:90%"></div>
-</div>
-
-<table class="coffee-table">
-<tr>
-<th>نسبة التحميص
-<th>أنواع البن</th>
-</tr>
-
-<tr>
-<td>وسط</td>
-<td>برازيلي — كولومبي — يمني - حبشي</td>
-</tr>
-
-</table>
-
-</div>
-<button class="story-btn" onclick="openStory(
-'No Pain...No Gain',
-'مفيش حاجه هتجيلك لحد عندك ، اسعى و اجتهد و ربنا هيديك على قد تعبك ، و اوعي تيأس لأن مفيش حلاوه من غير نار ، عايزك تتأكد دايما ان ربنا هيديك على قد تعبك_ و احنا عملنالك التوليفه الى هتخليك تكمل مشوارك ب اقصى طاقه ممكنه 💪🏻واعلى كافيين ممكن🔥 '
-)">ليه تشرب توليفة الحشم ؟</button>
- 
-  <br>
-  <div>
-   
-    <button class="weightBtn" onclick="addToCart('توليفة الحشم','500 جم',0)"> جم 500- 0 جنيه</button>
-  </div>
-
-  <div class="cart" id="cartHashm">
-    <h3>سلة مشترياتك</h3>
-    <div id="cartItemsHashm"></div>
-    <div>الإجمالي: <span id="totalHashm">0</span> جنيه</div>
-    <button class="confirm-btn" onclick="checkout('hashm')">تأكيد الطلب</button>
-  </div>
-
-  <button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<!-- توليفة ايوب -->
-<div id="ayoub" class="page">
-  <h2>توليفة ايوب</h2>
-   <div class="coffee-info">
-
-<img src="ayoub.png" class="coffee-img">
-
-<div>(متوسط)قوة الكافيين</div>
-<p>%نسبة الكافيين:65</p>
-<div class="caffeineBar">
-<div class="caffeineFill" style="width:65%"></div>
-</div>
-
-<table class="coffee-table">
-<tr>
-<th>نسبة التحميص
-<th>أنواع البن</th>
-</tr>
-
-<tr>
-<td>وسط</td>
-<td>برازيلي — كولومبي — يمني - حبشي</td>
-</tr>
-
-</table>
-
-</div>
-<button class="story-btn" onclick="openStory(
-'اشرب الصبر و استمتع بالفرج ',
-'سيدنا ايوب كان غني و عندو اولاد و صحه و فلوس مبتخلصش ، و ربنا ابتلاه بخسارة فلوسه و موت اولاده و مرض استمر معاه ١٨ سنه بحالهم! ، بس سيدنا ايوب صبر كل دا و قال الحمدلله لحد ما ربنا فرجها عليه و عوضه اضعاف _ و احنا عملنالك توليفة ايوب عشان تساعدك على الصبر ف حياتك ، و افتكر دايما ان الصبر هو مفتاح الفرج ❤️'
-)">ليه تشرب توليفة أيوب ؟</button>
-  
-  <br>
-  <div>
-    <button class="weightBtn" onclick="addToCart('توليفة ايوب','500 جم',0)">جم 500- 0 جنيه</button>
-  </div>
-
-  <div class="cart" id="cartAyoub">
-    <h3>سلة مشترياتك</h3>
-    <div id="cartItemsAyoub"></div>
-    <div>الإجمالي: <span id="totalAyoub">0</span> جنيه</div>
-   <button class="confirm-btn" onclick="checkout('ayoub')">تأكيد الطلب</button>
-  </div>
-
-  <button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<!-- توليفة ع السكه -->
-<div id="sikka" class="page">
-  <h2>توليفة ع السكه</h2>
-   <div class="coffee-info">
-
-<img src="sikka.png" class="coffee-img">
-
-<div>(متوسط يميل الى العالي)قوة الكافيين</div>
-<p>%نسبة الكافيين:80</p>
-<div class="caffeineBar">
-<div class="caffeineFill" style="width:80%"></div>
-</div>
-
-<table class="coffee-table">
-<tr>
-<th>نسبة التحميص
-<th>أنواع البن</th>
-</tr>
-
-<tr>
-<td>وسط</td>
-<td>برازيلي — كولومبي — يمني - حبشي</td>
-</tr>
-
-</table>
-
-</div>
-<button class="story-btn" onclick="openStory(
-' استمتع بالرحله...السكه طويله',
-'مسافر و سكتك طويله ؟ مفيش حاجه هتفوقك غير كباية القهوه الزياده _ و اخنا عملنالك توليفة ع السكه عشان تساعدك تركز لوقت اطول ف رحلتك ، اشرب و صحصح لطريقك ، توصل بالسلامه يا صديقي ❤️'
-)">ليه تشرب توليفة ع السكة ؟</button>
-  
-  <br>
-  <div>
-    <button class="weightBtn" onclick="addToCart('توليفة ع السكه','500 جم',0)">جم 500- 0 جنيه</button>
-  </div>
-
-  <div class="cart" id="cartSikka">
-    <h3>سلة مشترياتك</h3>
-    <div id="cartItemsSikka"></div>
-    <div>الإجمالي: <span id="totalSikka">0</span> جنيه</div>
-   <button class="confirm-btn" onclick="checkout('sikka')">تأكيد الطلب</button>
-  </div>
-
-  <button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<!-- توليفة الجدع -->
-<div id="gad3" class="page">
-  <h2>توليفة الجدع</h2>
-   <div class="coffee-info">
-
-<img src="gad3.png" class="coffee-img">
-
-<div>(قليل)قوة الكافيين</div>
-<p>%نسبة الكافيين:50</p>
-<div class="caffeineBar">
-<div class="caffeineFill" style="width:50%"></div>
-</div>
-
-<table class="coffee-table">
-<tr>
-<th>نسبة التحميص
-<th>أنواع البن</th>
-</tr>
-
-<tr>
-<td>وسط</td>
-<td>برازيلي — كولومبي — يمني - حبشي</td>
-</tr>
-
-</table>
-
-</div>
-<button class="story-btn" onclick="openStory(
-' توليفة الجدع ...لكل راجل جدع',
-'مفيش راجل جدع مش بيشرب قهوه ، و قهوته مش بتبقى اى قهوه _ و احنا عملنالك التوليفه بتاعة الجدعان ، اشرب و افتكر ان توليفة الجدع مش لأي حد 😉'
-)">'ليه تشرب توليفة الجدع؟</button>
-
-
-  <br>
-  <div>
-    
-    <button class="weightBtn" onclick="addToCart('توليفة الجدع','500 جم',0)">جم 500- 0 جنيه</button>
-  </div>
-
-  <div class="cart" id="cartGad3">
-    <h3>سلة مشترياتك</h3>
-    <div id="cartItemsGad3"></div>
-    <div>الإجمالي: <span id="totalGad3">0</span> جنيه</div>
-  <button class="confirm-btn" onclick="checkout('gad3')">تأكيد الطلب</button>
-  </div>
-
-  <button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<!-- صفحة تأكيد الطلب -->
-<div id="checkoutPage" class="page">
-  <h2>تأكيد الطلب</h2>
-  <form id="checkoutForm">
-    <input type="text" id="customerName" placeholder="الاسم" required>
-    <input type="text" id="customerAddress" placeholder="العنوان" required>
-    <button type="button" onclick="sendWhatsApp()">ارسال على واتس</button>
-  </form>
-  <button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<div class="footer">
-  <p>ملحوظة: احنا بنستخدم أجود أنواع البن الموجودة في العالم لكن كل توليفة بنسب مختلفه</p>
- <p> شركة (بن الحشم)التابعه لشركة (سميركو للاستيراد و التصدير) هي شركه اردنية الاصل تأسست عام 1983</p> 
-العنوان :الاردن_السلط_شارع اليرموك
-الهاتف :00962799198420
-    <p>كل الحقوق محفوظه</p>
-</div>
-
-<script>
-let cart = {};
-
-function showMenu(){
-  document.getElementById("menu").style.display="block";
-}
-
-function openPage(page){
-  document.getElementById("home").style.display="none";
-  document.getElementById("hashm").style.display="none";
-  document.getElementById("ayoub").style.display="none";
-  document.getElementById("sikka").style.display="none";
-  document.getElementById("gad3").style.display="none";
-  document.getElementById("checkoutPage").style.display="none";
-
-  document.getElementById(page).style.display="block";
-}
-
-function goHome(){
-  document.getElementById("home").style.display="block";
-  document.getElementById("hashm").style.display="none";
-  document.getElementById("ayoub").style.display="none";
-  document.getElementById("sikka").style.display="none";
-  document.getElementById("gad3").style.display="none";
-  document.getElementById("checkoutPage").style.display="none";
-}
-
-function addToCart(product, weight, price){
-  let key = product + " - " + weight;
-  if(cart[key]){
-    cart[key].qty +=1;
-  } else {
-    cart[key] = {product, weight, price, qty:1};
-  }
-  updateCartUI();
-}
-
-function updateCartUI(){
-  ['hashm','ayoub','sikka','gad3'].forEach(page=>{
-    let cartDiv = document.getElementById("cartItems"+capitalize(page));
-    let totalSpan = document.getElementById("total"+capitalize(page));
-    cartDiv.innerHTML="";
-    let total=0;
-    for(let key in cart){
-      if(key.includes(getProductName(page))){
-        let item = cart[key];
-        let div = document.createElement("div");
-        div.className="cartItem";
-        div.innerHTML=`<span>${item.product} (${item.weight}) x ${item.qty}</span>
-        <span>${item.price*item.qty}ج</span>
-        <button onclick="changeQty('${key}',-1)">-</button>
-        <button onclick="changeQty('${key}',1)">+</button>
-        <button onclick="removeItem('${key}')">حذف</button>`;
-        cartDiv.appendChild(div);
-        total += item.price*item.qty;
-      }
-    }
-    totalSpan.innerText = total;
-  });
-}
-
-function changeQty(key, val){
-  cart[key].qty += val;
-  if(cart[key].qty<=0){
-    delete cart[key];
-  }
-  updateCartUI();
-}
-
-function removeItem(key){
-  delete cart[key];
-  updateCartUI();
-}
-
-function checkout(page){
-  document.getElementById("checkoutPage").style.display="block";
-}
-
-function sendWhatsApp(){
-  let name = document.getElementById("customerName").value;
-  let address = document.getElementById("customerAddress").value;
-  if(!name || !address){alert("من فضلك املأ الاسم و العنوان"); return;}
-  let text = "الطلب من "+name+"\nالعنوان: "+address+"\n\n";
-  for(let key in cart){
-    let item = cart[key];
-    text += item.product+" ("+item.weight+") x "+item.qty+" = "+(item.price*item.qty)+"جنيه\n";
-  }
-  let url = "https://wa.me/201223136302?text="+encodeURIComponent(text);
-  window.open(url,"_blank");
-}
-
-function capitalize(s){return s.charAt(0).toUpperCase()+s.slice(1);}
-function getProductName(page){
-  switch(page){
-    case 'hashm': return 'توليفة الحشم';
-    case 'ayoub': return 'توليفة ايوب';
-    case 'sikka': return 'توليفة ع السكه';
-    case 'gad3': return 'توليفة الجدع';
-  }
-}
-</script>
-<script>
-function openStory(title, text){
-  document.getElementById("popupTitle").innerText = title;
-  document.getElementById("popupText").innerText = text;
-  document.getElementById("popup").classList.add("active");
-}
-
-function closeStory(){
-  document.getElementById("popup").classList.remove("active");
-}
-
-/* يقفل لما تدوس بره */
-document.addEventListener("click", function(e){
-  let popup = document.getElementById("popup");
-  if(e.target === popup){
-    closeStory();
-  }
-});
-</script>
-<style>
-  *{
-  box-sizing: border-box;
-}
-/*  خلفية متحركة فخمة */
-body::before {
+    body::before {
   content: "";
   position: fixed;
   top:0; left:0;
@@ -617,413 +21,901 @@ body::before {
   opacity:0.7;
 }
 
-@keyframes gradientMove {
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
+body{
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:url("coff.webp") center/cover no-repeat;
+  color:#fff;
 }
 
-/*  زرار تأكيد الطلب نيون */
-#checkoutForm button {
-  background: #04acfa;
-  color: #fff;
-  box-shadow: 0 0 10px #04acfa, 0 0 20px #04acfa, 0 0 30px #00f0ff, 0 0 40px #00f0ff inset;
-  border:none;
-  border-radius:15px;
-  transition: 0.3s;
+/* HEADER */
+.header{
+  text-align:center;
+  padding:15px;
+  background:rgba(0,0,0,.6);
 }
 
-#checkoutForm button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #04acfa, 0 0 40px #00f0ff, 0 0 60px #00f0ff inset;
-}
-.coffee-info{
-margin-top:25px;
-text-align:center;
-}
+.logo{height:120px}
+.logoText{font-size:28px;font-weight:bold}
 
-.coffee-img{
-width:85%;
-max-width:300px;
-border-radius:25px;
-box-shadow:0 0 25px rgba(0,0,0,.7);
-margin-bottom:20px;
-}
-
-.coffee-table{
-width:90%;
-margin:auto;
-border-collapse:collapse;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 0 25px rgba(0,0,0,.6);
-}
-
-.coffee-table th{
-background:rgba(255,255,255,.15);
-padding:12px;
-font-size:20px;
-}
-
-.coffee-table td{
-padding:12px;
-border-bottom:1px solid rgba(255,255,255,.15);
-}
-
-/*  بار قوة الكافيين */
-.caffeineBar{
-width:85%;
-height:22px;
-background:rgba(255,255,255,.15);
-margin:15px auto;
-border-radius:30px;
-overflow:hidden;
-box-shadow:0 0 15px black inset;
-}
-
-.caffeineFill{
-height:100%;
-border-radius:30px;
-background:linear-gradient(90deg,#00e5ff,#00ff9c,#ffee00,#ff3d00);
-background-size:300% 100%;
-animation:barMove 3s linear infinite;
-}
-
-@keyframes barMove{
-0%{background-position:0%;}
-100%{background-position:300%;}
-}
-/*  popup blur + fade */
-.popup {
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+/* PRODUCTS */
+.products{
   display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.card{
+  width:240px;
+  background:rgba(0,0,0,.75);
+  border-radius:15px;
+  padding:10px;
+}
+
+.card img{
+  width:100%;
+  border-radius:10px;
+}
+
+/* CAF BAR */
+.bar{
+  width:100%;
+  height:10px;
+  background:rgba(255,255,255,.2);
+  border-radius:10px;
+  overflow:hidden;
+  margin:8px 0;
+}
+.fill{
+  height:100%;
+  width:0%;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#000;
+  font-size:10px;
+  font-weight:bold;
+  box-shadow:0 0 10px #00f0ff;
+  transition:width 1.5s ease;
+}
+
+.low{background:#00ff8c; box-shadow:0 0 10px #00ff8c;}
+.medium{background:#ffea00; box-shadow:0 0 10px #ffea00;}
+.high{background:#ff4d00; box-shadow:0 0 10px #ff4d00;}
+.extreme{background:#ff0000; box-shadow:0 0 15px red;}
+
+.percent{
+  font-size:10px;
+}
+
+/* NEON BUTTON */
+.neonBtn{
+  margin:5px 0;
+  padding:10px;
+  border-radius:12px;
+  cursor:pointer;
+  border:2px solid #00f0ff;
+  background:transparent;
+  color:#00f0ff;
+  font-weight:bold;
+  width:100%;
+  box-shadow:0 0 10px #00f0ff;
+  transition:0.3s;
+}
+
+.neonBtn:hover{
+  background:#00f0ff;
+  color:#000;
+  transform:scale(1.05);
+}
+
+/* CART */
+.cart{
+  background:rgba(0,0,0,.85);
+  padding:15px;
+  width:90%;
+  max-width:420px;
+  margin:20px auto;
+  border-radius:15px;
+}
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:5px 0;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  inset:0;
+  display:none;
   justify-content:center;
   align-items:center;
-
-  background: rgba(0,0,0,0.3);
-  backdrop-filter: blur(0px);
-
-  opacity:0;
-  visibility:hidden;
-  transition: all 0.4s ease;
-  z-index:9999;
+  background:rgba(0,0,0,.6);
 }
 
-.popup.active{
-  opacity:1;
-  visibility:visible;
-  backdrop-filter: blur(8px);
-}
+.popup.active{display:flex;}
 
 .popup-content{
   background:#111;
-  color:#fff;
   padding:20px;
   border-radius:15px;
   width:85%;
   max-width:400px;
   text-align:center;
-
-  transform: scale(0.8);
-  transition:0.4s;
-  box-shadow:0 0 25px #00f0ff;
 }
 
-.popup.active .popup-content{
-  transform: scale(1);
-}
-
-.close-popup{
-  position:absolute;
-  top:10px;
-  right:15px;
-  font-size:25px;
-  cursor:pointer;
-}
-
-.story-btn{
-  margin-top:15px;
-  padding:20px 35px;
+/* BUTTON */
+.checkoutBtn{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  background:#00f0ff;
+  font-weight:bold;
   border:none;
-  border-radius:20px;
-  cursor:pointer;
-  color:white;
-  background:transparent;
-  border:2px solid #00f0ff;
-  box-shadow:0 0 10px #00f0ff,0 0 20px #00f0ff;
+  border-radius:10px;
+}
+
+input{
+  width:95%;
+  padding:10px;
+  margin:5px 0;
+  border-radius:10px;
+  border:none;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .products{flex-direction:column;align-items:center}
+  .card{width:90%}
+}
+
+/* ===== ANIMATION PACK ===== */
+
+/* دخول الكروت */
+.card{
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
   transition:0.3s;
 }
 
-.story-btn:hover{
-  box-shadow:0 0 20px #00f0ff,0 0 40px #00f0ff;
-}
-.popup-content p{
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  line-height: 1.6;
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-.popup-content{
-  max-height: 80vh;
-  overflow-y: auto;
+/* تأخير ظهور */
+.card:nth-child(1){animation-delay:0.1s;}
+.card:nth-child(2){animation-delay:0.2s;}
+.card:nth-child(3){animation-delay:0.3s;}
+.card:nth-child(4){animation-delay:0.4s;}
+.card:nth-child(5){animation-delay:0.5s;}
+.card:nth-child(6){animation-delay:0.6s;}
+.card:nth-child(7){animation-delay:0.7s;}
+.card:nth-child(8){animation-delay:0.8s;}
+.card:nth-child(9){animation-delay:0.9s;}
+.card:nth-child(10){animation-delay:1s;}
+.card:nth-child(11){animation-delay:1.1s;}
+.card:nth-child(12){animation-delay:1.2s;}
+.card:nth-child(13){animation-delay:1.3s;}
+.card:nth-child(14){animation-delay:1.4s;}
+/* Hover للكروت */
+.card:hover{
+  transform: scale(1.04);
+  box-shadow: 0 0 20px #00f0ff;
 }
-.story-btn{
-  font-size: 22px;
-  font-weight: bold;
-}
-.confirm-btn{
-  background: transparent;
-  color: #00f0ff;
-  border: 2px solid #00f0ff;
-  padding: 10px 25px;
-  font-size: 18px;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
-  transition: 0.3s;
+
+/* السلة */
+.cart{
+  animation: cartIn 0.7s ease;
 }
 
-.confirm-btn:hover{
-  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
-  transform: scale(1.05);
+@keyframes cartIn{
+  from{
+    opacity:0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
 }
-@keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+
+/* زرار الضغط */
+.neonBtn:active{
+  transform: scale(0.95);
 }
-@media (max-width: 600px){
-  .header{ height: 300px; padding-bottom:10px; }
-  .header img{ height:180px; }
-  .logoText{ font-size:28px; padding:6px 15px; }
-  .phone{ font-size:16px; padding:4px 12px; }
 
-  h1{ font-size:22px; padding:0 10px; }
-  h2{ font-size:18px; }
+/* لمسة ناعمة عامة */
+*{
+  transition: 0.2s ease;
+}
+.footer{
+  margin-top:40px;
+  background:rgba(0,0,0,.85);
+  padding:20px;
+  text-align:center;
+  border-top:1px solid #00f0ff;
+  box-shadow:0 -5px 20px rgba(0,240,255,.2);
+}
 
-  .mainBtn{ width:90%; font-size:18px; padding:14px; }
-  .option{ width:90%; font-size:18px; padding:14px; }
+.footer-content h3{
+  margin:5px 0;
+  color:#00f0ff;
+  text-shadow:0 0 10px #00f0ff;
+}
 
-  .page{ font-size:22px; padding:10px; }
+.footer-content p{
+  margin:5px 0;
+  font-size:14px;
+  opacity:0.8;
+}
 
-  .coffee-img{ width:95%; }
-  .coffee-table{ width:95%; font-size:14px; }
+.footer-links{
+  margin:10px 0;
+}
 
-  .weightBtn{ width:90%; font-size:16px; padding:10px; }
+.footer-links a{
+  display:inline-block;
+  margin:5px 10px;
+  color:#00f0ff;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-  .cart{ width:95%; font-size:14px; }
+.footer-links a:hover{
+  color:#fff;
+  text-shadow:0 0 10px #00f0ff;
+  transform:scale(1.1);
+}
 
-  .cartItem{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:5px;
+.copy{
+  margin-top:10px;
+  font-size:12px;
+  opacity:0.6;
+}
+.card.top{
+  order: -1;
+}
+
+.card.bottom{
+  order: 10;
+}
+.floating-cart{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  background:#00f0ff;
+  color:#000;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  font-weight:bold;
+  box-shadow:0 0 15px #00f0ff;
+  z-index:9999;
+  cursor:pointer;
+}
+@media(max-width:600px){
+
+  .products{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:8px;
+    padding:10px;
   }
 
-  #checkoutForm input{ width:90%; }
-  #checkoutForm button{ width:90%; }
+  .card{
+    width:100%;
+    padding:8px;
+    font-size:12px;
+  }
 
-  .popup-content{ width:90%; font-size:14px; }
+  .card img{
+    height:85px;
+    object-fit:cover;
+  }
+
+  h3{
+    font-size:13px;
+    margin:5px 0;
+  }
+
+  p, small{
+    font-size:11px;
+  }
+
+  .neonBtn{
+    padding:6px;
+    font-size:10px;
+  }
+
+  .bar{
+    height:6px;
+  }
+}
+*{
+  box-sizing:border-box;
+}
+.section-title{
+  text-align:center;
+  color:#00f0ff;
+  margin:10px 0;
+  text-shadow:0 0 10px #00f0ff;
+}
+
+/* wrapper */
+.slider-wrapper{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+/* slider */
+.slider{
+  display:flex;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  gap:10px;
+  padding:10px;
+  width:100%;
+}
+
+.slider::-webkit-scrollbar{
+  display:none;
+}
+
+/* cards */
+.slide-card{
+  min-width:120px;
+  background:rgba(0,0,0,.7);
+  border-radius:12px;
+  text-align:center;
+  padding:8px;
+  scroll-snap-align:center;
+  box-shadow:0 0 10px #00f0ff33;
+}
+
+.slide-card img{
+  width:100%;
+  height:80px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* buttons */
+.slider-btn{
+  position:absolute;
+  background:#00f0ff;
+  border:none;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  cursor:pointer;
+  z-index:10;
+  box-shadow:0 0 10px #00f0ff;
+}
+
+.slider-btn.left{left:5px;}
+.slider-btn.right{right:5px;}
+.slide-card{
+  position:relative;
+  min-width:140px;
+  background:rgba(0,0,0,.75);
+  border-radius:12px;
+  text-align:center;
+  padding:10px;
+  box-shadow:0 0 10px #00f0ff33;
+}
+
+.slide-card img{
+  width:100%;
+  height:85px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.slide-card p{
+  margin:5px 0;
+  color:#fff;
+  font-size:13px;
+}
+
+/* badge */
+.badge{
+  position:absolute;
+  top:5px;
+  right:5px;
+  background:#00f0ff;
+  color:#000;
+  font-size:10px;
+  padding:3px 6px;
+  border-radius:8px;
+  font-weight:bold;
+  box-shadow:0 0 10px #00f0ff;
+}
+
+/* buttons inside card */
+.slide-card button{
+  width:100%;
+  margin-top:5px;
+  padding:6px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:11px;
+  background:transparent;
+  color:#00f0ff;
+  border:1px solid #00f0ff;
+}
+
+.slide-card button:hover{
+  background:#00f0ff;
+  color:#000;
 }
 </style>
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close-popup" onclick="closeStory()">&times;</span>
-    <h2 id="popupTitle"></h2>
-    <p id="popupText"></p>
+</head>
+
+<body>
+
+<div class="header">
+  <img class="logo" src="logo.png">
+  <div class="logoText">بن الحشم ☕</div>
+</div>
+<h3 class="section-title">🔥 الأكثر مبيعًا</h3>
+
+<div class="slider-wrapper">
+
+  <button class="slider-btn left" onclick="moveSlider(-1)">‹</button>
+
+  <div class="slider" id="slider">
+
+    <div class="slide-card">
+      <span class="badge">🔥</span>
+      <img src="hashm.png">
+      <p>الحشم</p>
+
+      <button onclick="quickAdd('توليفة الحشم',150)">+ سلة</button>
+      <button onclick="openStory('الحشم','قوة وكافيين عالي 🔥')">تفاصيل</button>
+    </div>
+
+    <div class="slide-card">
+      <span class="badge">🔥</span>
+      <img src="espresso.jpeg">
+      <p>ESPRESSO</p>
+
+      <button onclick="quickAdd('توليفة ESPRESSO',170)">+ سلة</button>
+      <button onclick="openStory('ESPRESSO','جرعة مركزة تعيشك فايق 🔥')">تفاصيل</button>
+    </div>
+
+    <div class="slide-card">
+      <span class="badge">🔥</span>
+      <img src="sikka.png">
+      <p>ع السكة</p>
+
+      <button onclick="quickAdd('توليفة ع السكة',160)">+ سلة</button>
+      <button onclick="openStory('السكة','تركيز عالي أثناء السفر 🚀')">تفاصيل</button>
+    </div>
+
+    <div class="slide-card">
+      <span class="badge">🔥</span>
+      <img src="gad3.png">
+      <p>الجدع</p>
+
+      <button onclick="quickAdd('توليفة الجدع',130)">+ سلة</button>
+      <button onclick="openStory('الجدع','خفيف وناعم 😄')">تفاصيل</button>
+    </div>
+
+  </div>
+
+  <button class="slider-btn right" onclick="moveSlider(1)">›</button>
+
+</div>
+
+<!-- PRODUCTS -->
+<div class="products">
+
+  <!-- الحشم -->
+  <div class="card top">
+    <img src="hashm.png">
+    <h3>توليفة الحشم(125 جرام)</h3>
+    <p>150 جنيه</p>
+
+    <div class="bar">
+  <div class="fill" data-caffeine="90">
+    <span class="percent">90%</span>
   </div>
 </div>
-<script>
-function openStory(title, text){
-  let popup = document.getElementById("popup");
+      <small>كافيين 90%</small>
 
-  if(!popup){
-    popup = document.createElement("div");
-    popup.id = "popup";
-    popup.className = "popup";
-    popup.innerHTML = `
-      <div class="popup-content" onclick="event.stopPropagation()">
-        <span class="close-popup" onclick="closeStory()">&times;</span>
-        <h2 id="popupTitle"></h2>
-        <p id="popupText"></p>
+    <button class="neonBtn" onclick="openStory('الحشم','قوة وكافيين عالي 🔥')">القصة</button>
+    <button class="neonBtn" onclick="openSpecs('الحشم','برازيلي + كولومبي')">المواصفات</button>
+    <button class="neonBtn" onclick="add('توليفة الحشم( جرام 125)',150)">إضافة للسلة</button>
+  </div>
+
+  <!-- أيوب -->
+  <div class="card top">
+    <img src="ayoub.png">
+    <h3>توليفة أيوب( جرام 125)</h3>
+    <p>140 جنيه</p>
+    <div class="bar">
+  <div class="fill" data-caffeine="65">
+    <span class="percent">65%</span>
+  </div>
+</div>
+      <small>كافيين 65%</small>
+
+    <button class="neonBtn" onclick="openStory('أيوب','الصبر مفتاح الفرج 💪')">القصة</button>
+    <button class="neonBtn" onclick="openSpecs('أيوب','متوازن وخفيف')">المواصفات</button>
+    <button class="neonBtn" onclick="add('توليفة أيوب( جرام 125)',140)">إضافة للسلة</button>
+  </div>
+
+  <!-- السكة -->
+  <div class="card top">
+    <img src="sikka.png">
+    <h3>توليفة ع السكة( جرام 125)</h3>
+    <p>160 جنيه</p>
+    <div class="bar">
+  <div class="fill" data-caffeine="80">
+    <span class="percent">80%</span>
+  </div>
+</div>
+      <small>كافيين 80%</small>
+
+    <button class="neonBtn" onclick="openStory('السكة','تركيز طويل في السفر 🚀')">القصة</button>
+    <button class="neonBtn" onclick="openSpecs('السكة','مناسبة للسفر')">المواصفات</button>
+    <button class="neonBtn" onclick="add('توليفة ع السكة ( جرام 125)',160)">إضافة للسلة</button>
+  </div>
+
+  <!-- الجدع -->
+  <div class="card top">
+    <img src="gad3.png">
+    <h3>توليفة الجدع( جرام 125)</h3>
+    <p>130 جنيه</p>
+    <div class="bar">
+  <div class="fill" data-caffeine="50">
+    <span class="percent">50%</span>
+  </div>
+</div>
+      <small>كافيين 50%</small>
+
+    <button class="neonBtn" onclick="openStory('الجدع','للجدعان بس 😄')">القصة</button>
+    <button class="neonBtn" onclick="openSpecs('الجدع','خفيف وناعم')">المواصفات</button>
+    <button class="neonBtn" onclick="add('توليفة الجدع( جرام 125)',130)">إضافة للسلة</button>
+  </div>
+<!-- ESPRESSO -->
+<div class="card top">
+  <img src="espresso.jpeg">
+  <h3> ESPRESSO</h3>
+  <p>170 جنيه</p>
+  <small>125 جرام</small>
+  <div class="bar">
+  <div class="fill" data-caffeine="95">
+    <span class="percent">95%</span>
+  </div>
+</div>
+  <small>كافيين 95%</small>
+
+  <button class="neonBtn" onclick="openStory('ESPRESSO','جرعة كافيين مركزة 🔥 تعيشك فايق على الآخر')">القصة</button>
+
+  <button class="neonBtn" onclick="openSpecs('ESPRESSO','تحميص داكن + نكهة قوية مركزة')">المواصفات</button>
+
+  <button class="neonBtn" onclick="add('( جرام 125) ESPRESSO',170)">إضافة للسلة</button>
+</div>
+
+<!-- الحشم -->
+  <div class="card bottom">
+    <img src="hashm.png">
+    <h3>توليفة الحشم( جرام 500)</h3>
+    <p>350 جنيه</p>
+
+    <div class="bar">
+  <div class="fill" data-caffeine="90">
+    <span class="percent">90%</span>
+  </div>
+</div>
+      <small>كافيين 90%</small>
+
+    <button class="neonBtn" onclick="openStory('الحشم','قوة وكافيين عالي 🔥')">القصة</button>
+    <button class="neonBtn" onclick="openSpecs('الحشم','برازيلي + كولومبي')">المواصفات</button>
+    <button class="neonBtn" onclick="add('توليفة الحشم( جرام 500)',350)">إضافة للسلة</button>
+  </div>
+
+  <!-- أيوب -->
+  <div class="card bottom">
+    <img src="ayoub.png">
+    <h3>توليفة أيوب( جرام 500)</h3>
+    <p>350 جنيه</p>
+    <div class="bar">
+  <div class="fill" data-caffeine="65">
+    <span class="percent">65%</span>
+  </div>
+</div>
+      <small>كافيين 65%</small>
+
+    <button class="neonBtn" onclick="openStory('أيوب','الصبر مفتاح الفرج 💪')">القصة</button>
+    <button class="neonBtn" onclick="openSpecs('أيوب','متوازن وخفيف')">المواصفات</button>
+    <button class="neonBtn" onclick="add('توليفة أيوب( جرام 500)',350)">إضافة للسلة</button>
+  </div>
+
+  <!-- السكة -->
+  <div class="card bottom">
+    <img src="sikka.png">
+    <h3>توليفة ع السكة( جرام 500)</h3>
+    <p>350 جنيه</p>
+    <div class="bar">
+  <div class="fill" data-caffeine="80">
+    <span class="percent">80%</span>
+  </div>
+</div>
+      <small>كافيين 80%</small>
+
+    <button class="neonBtn" onclick="openStory('السكة','تركيز طويل في السفر 🚀')">القصة</button>
+    <button class="neonBtn" onclick="openSpecs('السكة','مناسبة للسفر')">المواصفات</button>
+    <button class="neonBtn" onclick="add('توليفة ع السكة( جرام 500)',350)">إضافة للسلة</button>
+  </div>
+
+  <!-- الجدع -->
+  <div class="card bottom">
+    <img src="gad3.png">
+    <h3>توليفة الجدع( جرام 500)</h3>
+    <p>350 جنيه</p>
+    <div class="bar">
+  <div class="fill" data-caffeine="50">
+    <span class="percent">50%</span>
+  </div>
+</div>
+      <small>كافيين 50%</small>
+
+    <button class="neonBtn" onclick="openStory('الجدع','للجدعان بس 😄')">القصة</button>
+    <button class="neonBtn" onclick="openSpecs('الجدع','خفيف وناعم')">المواصفات</button>
+    <button class="neonBtn" onclick="add('توليفة الجدع( جرام 500)',350)">إضافة للسلة</button>
+  </div>
+<!-- ESPRESSO -->
+<div class="card bottom">
+  <img src="espresso.jpeg">
+  <h3> ESPRESSO( جرام 500)</h3>
+  <p>350 جنيه</p>
+ <div class="bar">
+  <div class="fill" data-caffeine="95">
+    <span class="percent">95%</span>
+  </div>
+</div>
+  <small>كافيين 95%</small>
+
+  <button class="neonBtn" onclick="openStory('ESPRESSO','جرعة كافيين مركزة 🔥 تعيشك فايق على الآخر')">القصة</button>
+
+  <button class="neonBtn" onclick="openSpecs('ESPRESSO','تحميص داكن + نكهة قوية مركزة')">المواصفات</button>
+
+  <button class="neonBtn" onclick="add('( جرام 500) ESPRESSO',350)">إضافة للسلة</button>
+</div>
+</div>
+
+</div>
+
+
+
+<!-- CART -->
+<div class="cart">
+  <h3>🛒 السلة</h3>
+  <div id="box"></div>
+
+  <h4>الإجمالي: <span id="total">0</span></h4>
+
+  <button class="checkoutBtn" onclick="openCheckout()">تأكيد الطلب</button>
+</div>
+
+<!-- CHECKOUT -->
+<div id="checkout" class="popup" onclick="closePopup()">
+  <div class="popup-content" onclick="event.stopPropagation()">
+
+    <h3>تأكيد الطلب</h3>
+
+    <input id="name" placeholder="الاسم">
+    <input id="address" placeholder="العنوان">
+
+    <button class="checkoutBtn" onclick="send()">إرسال واتساب</button>
+  </div>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup" onclick="closePopup()">
+  <div class="popup-content">
+    <h3 id="title"></h3>
+    <p id="text"></p>
+  </div>
+</div>
+
+<script>
+
+let cart=[];
+
+function add(name,price){
+  let item=cart.find(i=>i.name===name);
+  if(item) item.qty++;
+  else cart.push({name,price,qty:1});
+  render();
+}
+
+function changeQty(i,v){
+  cart[i].qty+=v;
+  if(cart[i].qty<=0) cart.splice(i,1);
+  render();
+}
+
+function render(){
+  let box=document.getElementById("box");
+  let total=document.getElementById("total");
+
+  box.innerHTML="";
+  let sum=0;
+
+  cart.forEach((c,i)=>{
+    sum+=c.price*c.qty;
+
+    box.innerHTML+=`
+      <div class="item">
+        <span>${c.name}</span>
+        <div>
+          <button onclick="changeQty(${i},1)">+</button>
+          ${c.qty}
+          <button onclick="changeQty(${i},-1)">-</button>
+        </div>
       </div>
     `;
-    document.body.appendChild(popup);
+  });
 
-    popup.addEventListener("click", closeStory);
+  total.innerText=sum;
+  document.getElementById("cartCount").innerText =
+cart.reduce((sum, item) => sum + item.qty, 0);
+}
+
+/* POPUP */
+function openStory(t,x){
+  document.getElementById("title").innerText=t;
+  document.getElementById("text").innerText=x;
+  document.getElementById("popup").classList.add("active");
+}
+
+function openSpecs(t,x){
+  document.getElementById("title").innerText="المواصفات: "+t;
+  document.getElementById("text").innerText=x;
+  document.getElementById("popup").classList.add("active");
+}
+
+function openCheckout(){
+  document.getElementById("checkout").classList.add("active");
+}
+
+function closePopup(){
+  document.querySelectorAll(".popup").forEach(p=>p.classList.remove("active"));
+}
+
+/* WHATSAPP */
+function send(){
+
+  let name=document.getElementById("name").value;
+  let address=document.getElementById("address").value;
+
+  if(!name||!address){
+    alert("امل البيانات");
+    return;
   }
 
-  document.getElementById("popupTitle").innerText = title;
+  let msg="🛒 طلب جديد\n\n";
+  msg+="الاسم: "+name+"\nالعنوان: "+address+"\n\n";
 
-  popup.classList.add("active");
+  let total=0;
 
-  typeWriter(text, document.getElementById("popupText"));
+  cart.forEach(c=>{
+    let t=c.price*c.qty;
+    total+=t;
+    msg+=`${c.name} x${c.qty} = ${t} جنيه\n`;
+  });
+
+  msg+="\n💰 الإجمالي: "+total;
+
+  window.open("https://wa.me/201223136302?text="+encodeURIComponent(msg));
+}
+function openCart(){
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
+  });
+}
+let slider = document.getElementById("slider");
+
+/* زرار يمين وشمال */
+function moveSlider(dir){
+  slider.scrollBy({
+    left: dir * 150,
+    behavior: "smooth"
+  });
 }
 
-function closeStory(){
-  const popup = document.getElementById("popup");
-  if(popup) popup.classList.remove("active");
+/* Auto Scroll */
+setInterval(()=>{
+  if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+    slider.scrollTo({left:0, behavior:"smooth"});
+  }else{
+    slider.scrollBy({left:120, behavior:"smooth"});
+  }
+}, 3000);
+function quickAdd(name, price){
+  add(name, price);
 }
+setInterval(()=>{
+  let slider = document.getElementById("slider");
 
-/* ===== typing animation ===== */
-function typeWriter(text, element){
-  element.innerText = "";
-  let i = 0;
+  if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+    slider.scrollTo({left:0, behavior:"smooth"});
+  }else{
+    slider.scrollBy({left:140, behavior:"smooth"});
+  }
+}, 2500);
+document.querySelectorAll(".fill").forEach(bar=>{
+  let value = bar.getAttribute("data-caffeine");
+  let percentText = bar.querySelector(".percent");
 
-  function typing(){
-    if(i < text.length){
-      element.innerText += text.charAt(i);
-      i++;
-      setTimeout(typing, 50); // السرعة
+  // تحديد اللون
+  if(value < 60){
+    bar.classList.add("low");
+  }else if(value < 80){
+    bar.classList.add("medium");
+  }else if(value < 95){
+    bar.classList.add("high");
+  }else{
+    bar.classList.add("extreme");
+  }
+
+  // أنيميشن العرض
+  setTimeout(()=>{
+    bar.style.width = value + "%";
+  }, 300);
+
+  // عداد الأرقام
+  let count = 0;
+  let interval = setInterval(()=>{
+    if(count >= value){
+      clearInterval(interval);
+    }else{
+      count++;
+      percentText.innerText = count + "%";
     }
-  }
-
-  typing();
-}
-</script>
-<div id="storePopup" class="popup">
-  <div class="popup-content" onclick="event.stopPropagation()">
-    
-    <span class="close-popup" onclick="closeStorePopup()">&times;</span>
-
-    <h2>منافذ البيع</h2>
-
-    <select id="governorate" onchange="updateCities()">
-      <option value="">-- اختر المحافظة --</option>
-    </select>
-
-    <select id="city" onchange="showStores()">
-      <option value="">-- اختر المدينة --</option>
-    </select>
-
-    <div id="stores"></div>
-
-  </div>
-</div>
-<script>
-// فتح وقفل
-function openStorePopup() {
-  document.getElementById("storePopup").classList.add("active");
-}
-
-function closeStorePopup() {
-  document.getElementById("storePopup").classList.remove("active");
-}
-
-// البيانات
-const data = {
-  "القاهرة": ["مدينة نصر","التجمع الخامس","المعادي","حلوان","عين شمس","المطرية","الزيتون","شبرا","روض الفرج","السلام","المرج","البساتين","دار السلام","الشروق","بدر"],
-  
-  "الجيزة": ["الدقي","المهندسين","الهرم","فيصل","العمرانية","6 أكتوبر","الشيخ زايد","الحوامدية","البدرشين","العياط","أوسيم","كرداسة"],
-
-  "الإسكندرية": ["سيدي جابر","سموحة","العجمي","المنتزه","ميامي","العصافرة","لوران","محرم بك","القباري"],
-
-  "الغربية": ["طنطا","المحلة الكبرى","كفر الزيات","زفتى","سمنود","بسيون","قطور"],
-
-  "الدقهلية": ["المنصورة","طلخا","ميت غمر","دكرنس","أجا","السنبلاوين","المنزلة","بلقاس","شربين"],
-
-  "الشرقية": ["الزقازيق","العاشر من رمضان","بلبيس","منيا القمح","أبو كبير","فاقوس","الحسينية","أولاد صقر"],
-
-  "القليوبية": ["بنها","شبرا الخيمة","قليوب","القناطر الخيرية","طوخ","شبين القناطر","الخانكة","كفر شكر"],
-
-  "المنوفية": ["شبين الكوم","السادات","منوف","أشمون","الباجور","قويسنا","تلا","بركة السبع"],
-
-  "كفر الشيخ": ["كفر الشيخ","دسوق","فوه","مطوبس","بيلا","الحامول","الرياض","سيدي سالم"],
-
-  "البحيرة": ["دمنهور","كفر الدوار","رشيد","إدكو","أبو حمص","الدلنجات","المحمودية","إيتاي البارود"],
-
-  "الفيوم": ["الفيوم","سنورس","إطسا","طامية","يوسف الصديق"],
-
-  "بني سويف": ["بني سويف","الواسطى","ناصر","إهناسيا","ببا","سمسطا","الفشن"],
-
-  "المنيا": ["المنيا","ملوي","سمالوط","بني مزار","مطاي","أبو قرقاص","دير مواس"],
-
-  "أسيوط": ["أسيوط","ديروط","منفلوط","القوصية","أبنوب","أبو تيج","الغنايم","ساحل سليم"],
-
-  "سوهاج": ["سوهاج","جرجا","المراغة","طما","طهطا","أخميم","البلينا","دار السلام"],
-
-  "قنا": ["قنا","نجع حمادي","دشنا","قفط","قوص","نقادة","فرشوط","أبو تشت"],
-
-  "الأقصر": ["الأقصر","إسنا","أرمنت","البياضية","الزينية"],
-
-  "أسوان": ["أسوان","إدفو","كوم أمبو","دراو","نصر النوبة"],
-
-  "البحر الأحمر": ["الغردقة","رأس غارب","سفاجا","القصير","مرسى علم","الشلاتين"],
-
-  "شمال سيناء": ["العريش","الشيخ زويد","رفح","بئر العبد"],
-
-  "جنوب سيناء": ["شرم الشيخ","دهب","نويبع","طابا","رأس سدر","أبو رديس","أبو زنيمة"],
-
-  "مطروح": ["مرسى مطروح","الحمام","العلمين","الضبعة","سيوة"],
-
-  "الوادي الجديد": ["الخارجة","الداخلة","الفرافرة","باريس"],
-
-  "الإسماعيلية": ["الإسماعيلية","فايد","القنطرة شرق","القنطرة غرب","التل الكبير"],
-
-  "السويس": ["السويس","الأربعين","عتاقة","الجناين"],
-
-  "بورسعيد": ["بورسعيد","بورفؤاد"],
-
-  "دمياط": ["دمياط","رأس البر","فارسكور","الزرقا","كفر سعد"]
-};
-
-// تحميل المحافظات
-window.addEventListener("load", function() {
-  let gov = document.getElementById("governorate");
-
-  for (let g in data) {
-    gov.innerHTML += `<option value="${g}">${g}</option>`;
-  }
+  }, 15);
 });
-
-// المدن
-function updateCities() {
-  let gov = document.getElementById("governorate").value;
-  let city = document.getElementById("city");
-
-  city.innerHTML = '<option value="">-- اختر المدينة --</option>';
-
-  if (data[gov]) {
-    data[gov].forEach(c => {
-      city.innerHTML += `<option value="${c}">${c}</option>`;
-    });
-  }
-}
-
-// المنافذ
-function showStores() {
-  let city = document.getElementById("city").value;
-  let storesDiv = document.getElementById("stores");
-
-  let stores = {
-    "أبو تيج":[
-       "شيخ العطارين - شارع الجلاء امام البنك الاهلي",
-       "هاني ماركت - طريق اسيوط سوهاج قبل المطافي الجديدة",
-      ],
-   
-    "أسيوط": [" جامعة اسيوط - smile كافيتيريا"]
-  };
-
-  storesDiv.innerHTML = "";
-
-  if (stores[city]) {
-    stores[city].forEach(s => {
-      storesDiv.innerHTML += `<p>📍 ${s}</p>`;
-    });
-  } else {
-    storesDiv.innerHTML = "<p>لا يوجد منافذ حالياً</p>";
-  }
-}
-
-// يقفل لما تدوس بره
-document.getElementById("storePopup")?.addEventListener("click", closeStorePopup);
 </script>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <h3>☕ بن الحشم</h3>
+     <p>ملحوظة: احنا بنستخدم أجود أنواع البن الموجودة في العالم لكن كل توليفة بنسب مختلفه</p>
+ <p> شركة (بن الحشم)التابعه لشركة (سميركو للاستيراد و التصدير) هي شركه اردنية الاصل تأسست عام 1983</p> 
+العنوان :الاردن_السلط_شارع اليرموك
+الهاتف :00962799198420
+   
+    <div class="footer-links">
+      <a href="#">الرئيسية</a>
+      <a href="#">المنتجات</a>
+      <a href="#" onclick="openCheckout()">اطلب الآن</a>
+    </div>
+
+    <p class="copy">© 2026 جميع الحقوق محفوظة - بن الحشم</p>
+  </div>
+</footer>
+<div class="floating-cart" onclick="openCart()">
+  🛒 <span id="cartCount">0</span>
+</div>
 </body>
 </html>
