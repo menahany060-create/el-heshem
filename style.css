@@ -42,13 +42,17 @@ body{
   background:rgba(0,0,0,.75);
   border-radius:15px;
   padding:10px;
+  overflow:hidden;
 }
 
-.card img {
+.card img{
   width: 100%;
-  height: 200px;
-  object-fit: contain;
+  height: 180px;        /* إطار ثابت */
+  object-fit: contain;  /* أهم سطر: مفيش قص نهائي */
   display: block;
+  background: #0b0b0b;  /* لو في فراغات تبقى شكلها شيك */
+  border-radius: 10px;
+  padding: 6px;
 }
 
 /* CAF BAR */
@@ -164,8 +168,14 @@ input{
 
 /* MOBILE */
 @media(max-width:600px){
-  .products{flex-direction:column;align-items:center}
-  .card{width:90%}
+  .card{
+    width: 95%;
+  }
+
+  .card img{
+    height: 160px;
+    object-fit: contain; /* نفس القاعدة */
+  }
 }
 
 /* ===== ANIMATION PACK ===== */
