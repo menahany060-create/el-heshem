@@ -202,15 +202,28 @@ window.onload = function () {
 
   slider = document.getElementById("slider");
 
+// ننسخ الكروت
+let cards = slider.innerHTML;
+slider.innerHTML += cards;
+
   // Auto slider
-  setInterval(() => {
-    if (!slider) return;
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-      slider.scrollTo({ left: 0, behavior: "smooth" });
-    } else {
-      slider.scrollBy({ left: 130, behavior: "smooth" });
-    }
-  }, 3000);
+  const step = 150;
+
+setInterval(() => {
+  if (!slider) return;
+
+  slider.scrollBy({
+    left: step,
+    behavior: "smooth"
+  });
+
+  // لما نوصل لنص السلايدر (لأننا ضاعفنا الكروت)
+  if (slider.scrollLeft >= slider.scrollWidth / 2) {
+    setTimeout(() => {
+      slider.scrollLeft = 0; // رجوع فوري بدون إحساس
+    }, 400); // بعد الأنيميشن
+  }
+}, 3000);
 
   // Caffeine bars
   document.querySelectorAll(".fill").forEach(bar => {
