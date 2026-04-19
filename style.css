@@ -511,7 +511,7 @@ border-radius:5px;
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
+  background: rgba(0,0,0,0.5);   /* ← خلفية خفيفة تخليه واضح */
   border: 2px solid #00f0ff;
   border-radius: 8px;
   cursor: pointer;
@@ -520,9 +520,10 @@ border-radius:5px;
   gap: 5px;
   padding: 8px;
   box-shadow: 0 0 10px #00f0ff55;
-  z-index: 1000;
+  z-index: 10000;                 /* ← رفع الـ z-index فوق كل حاجة */
+  visibility: visible !important; /* ← ضمان ظهوره */
+  opacity: 1 !important;
 }
-
 .menu-btn span {
   display: block;
   width: 24px;
@@ -585,4 +586,22 @@ border-radius:5px;
 .nav-menu a:hover {
   background: #00f0ff22;
   color: #fff;
+}
+@media(max-width:600px){
+  .menu-btn {
+    left: 10px;
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .menu-btn span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .nav-menu {
+    left: 5px;
+    min-width: 180px;
+    z-index: 99999;
+  }
 }
