@@ -600,21 +600,3 @@ input::placeholder { color: #888; }
   .products { grid-template-columns: repeat(3, 1fr); }
   .card img { height: 130px; }
 }
-
-/* ===== INFINITE SLIDER TRACK ===== */
-.slider-wrapper {
-  overflow: hidden;
-}
-
-.slider {
-  display: flex;
-  gap: 10px;
-  padding: 10px 5px;
-  width: max-content;
-  scroll-snap-type: none;
-  overflow: visible;
-}
-
-.slider-track {
-  will-change: transform;
-}
