@@ -154,9 +154,14 @@ body::before {
 /* ===== SLIDER ===== */
 .slider-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 38px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .slider {
@@ -165,17 +170,12 @@ body::before {
   padding: 10px 0;
   width: max-content;
   animation: infiniteScroll 18s linear infinite;
+  will-change: transform;
 }
 
 @keyframes infiniteScroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-
-.slider-wrapper {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
 }
 
 .slide-card {
@@ -236,25 +236,8 @@ body::before {
 .slide-card button:active { background: #00f0ff; color: #000; }
 
 .slider-btn {
-  position: absolute;
-  background: #00f0ff;
-  border: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 0 10px #00f0ff;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  touch-action: manipulation;
+  display: none;
 }
-
-.slider-btn.left  { left: 2px; }
-.slider-btn.right { right: 2px; }
 
 /* ===== PRODUCTS GRID ===== */
 .products {
