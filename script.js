@@ -244,3 +244,22 @@ function showToast(msg){
     setTimeout(()=>t.remove(), 300);
   }, 1200);
 }
+// ===== وظيفة المنيو =====
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("open");
+  document.getElementById("menuBtn").classList.toggle("open");
+}
+
+function closeMenu() {
+  document.getElementById("navMenu").classList.remove("open");
+  document.getElementById("menuBtn").classList.remove("open");
+}
+
+// إقفال المنيو لو ضغطت برا
+document.addEventListener("click", function(e) {
+  let menu = document.getElementById("navMenu");
+  let btn = document.getElementById("menuBtn");
+  if (!menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMenu();
+  }
+});
