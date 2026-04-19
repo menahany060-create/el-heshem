@@ -42,47 +42,38 @@
 
 <h3 class="section-title">🔥 الأكثر مبيعًا</h3>
 
-<div class="slider-wrapper">
-  <button class="slider-btn left" onclick="moveSlider(-1)">‹</button>
-  <div class="slider" id="slider">
+<div class="bestsellers">
 
-    <div class="slide-card" onclick="scrollToProduct('الحشم')" style="cursor:pointer">
-      <span class="badge">🔥</span>
-      <img src="hashm.png">
-      <p>الحشم</p>
-      <small class="slide-hint">اضغط للمنتج ↓</small>
-    </div>
-
-    <div class="slide-card" onclick="scrollToProduct('ESPRESSO')" style="cursor:pointer">
-      <span class="badge">🔥</span>
-      <img src="espresso.png">
-      <p>ESPRESSO</p>
-      <small class="slide-hint">اضغط للمنتج ↓</small>
-    </div>
-
-    <div class="slide-card" onclick="scrollToProduct('السكة')" style="cursor:pointer">
-      <span class="badge">🔥</span>
-      <img src="sikka.png">
-      <p>ع السكة</p>
-      <small class="slide-hint">اضغط للمنتج ↓</small>
-    </div>
-
-    <div class="slide-card" onclick="scrollToProduct('الجدع')" style="cursor:pointer">
-      <span class="badge">🔥</span>
-      <img src="gad3.png">
-      <p>الجدع</p>
-      <small class="slide-hint">اضغط للمنتج ↓</small>
-    </div>
-
-    <div class="slide-card" onclick="scrollToProduct('أيوب')" style="cursor:pointer">
-      <span class="badge">🔥</span>
-      <img src="ayoub.png">
-      <p>أيوب</p>
-      <small class="slide-hint">اضغط للمنتج ↓</small>
-    </div>
-
+  <div class="bs-card" onclick="scrollToProduct('الحشم')">
+    <span class="badge">🔥</span>
+    <img src="hashm.png">
+    <p>الحشم</p>
   </div>
-  <button class="slider-btn right" onclick="moveSlider(1)">›</button>
+
+  <div class="bs-card" onclick="scrollToProduct('ESPRESSO')">
+    <span class="badge">🔥</span>
+    <img src="espresso.png">
+    <p>ESPRESSO</p>
+  </div>
+
+  <div class="bs-card" onclick="scrollToProduct('السكة')">
+    <span class="badge">🔥</span>
+    <img src="sikka.png">
+    <p>ع السكة</p>
+  </div>
+
+  <div class="bs-card" onclick="scrollToProduct('الجدع')">
+    <span class="badge">🔥</span>
+    <img src="gad3.png">
+    <p>الجدع</p>
+  </div>
+
+  <div class="bs-card" onclick="scrollToProduct('أيوب')">
+    <span class="badge">🔥</span>
+    <img src="ayoub.png">
+    <p>أيوب</p>
+  </div>
+
 </div>
 
 <!-- PRODUCTS -->
