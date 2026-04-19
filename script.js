@@ -202,14 +202,8 @@ window.onload = function () {
   slider = document.getElementById("slider");
 
   // Auto slider
-  setInterval(() => {
-    if (!slider) return;
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-      slider.scrollTo({ left: 0, behavior: "smooth" });
-    } else {
-      slider.scrollBy({ left: 130, behavior: "smooth" });
-    }
-  }, 3000);
+  let cards = Array.from(slider.children);
+cards.forEach(card => slider.appendChild(card.cloneNode(true)));
 
   // Caffeine bars
   document.querySelectorAll(".fill").forEach(bar => {
