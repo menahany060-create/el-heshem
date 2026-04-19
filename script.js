@@ -212,18 +212,15 @@ slider.innerHTML += cards;
 setInterval(() => {
   if (!slider) return;
 
-  slider.scrollBy({
-    left: step,
-    behavior: "smooth"
-  });
+  slider.scrollLeft += step;
 
-  // لما نوصل لنص السلايدر (لأننا ضاعفنا الكروت)
-  if (slider.scrollLeft >= slider.scrollWidth / 2) {
-    setTimeout(() => {
-      slider.scrollLeft = 0; // رجوع فوري بدون إحساس
-    }, 400); // بعد الأنيميشن
+  let half = slider.scrollWidth / 2;
+
+  // أول ما تعدي نص السلايدر (يعني خلصت النسخة الأصلية)
+  if (slider.scrollLeft >= half) {
+    slider.scrollLeft -= half;
   }
-}, 3000);
+}, 2500);
 
   // Caffeine bars
   document.querySelectorAll(".fill").forEach(bar => {
