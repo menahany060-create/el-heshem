@@ -152,13 +152,10 @@ window.onload = function() {
 
   slider = document.getElementById("slider");
 
-  // Infinite slider - clone cards 3 times عشان يفضل فيه content
+  // Infinite slider - clone once = -50% animation صح
   if (slider) {
     let cards = Array.from(slider.children);
-    // clone 3 مرات عشان الـ animation تلاقي content كفاية
-    for (let i = 0; i < 3; i++) {
-      cards.forEach(card => slider.appendChild(card.cloneNode(true)));
-    }
+    cards.forEach(card => slider.appendChild(card.cloneNode(true)));
   }
 
   // Caffeine bars
