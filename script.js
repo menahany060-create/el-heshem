@@ -134,12 +134,11 @@ function openCart() {
 // ===== SLIDER =====
 let slider;
 
-function moveSlider(dir){
-  slider.scrollBy({
-    left: dir * 150,
-    behavior: "smooth"
-  });
+function moveSlider(dir) {
+  if (!slider) return;
+  slider.scrollBy({ left: dir * 150, behavior: "smooth" });
 }
+
 // ===== MENU =====
 function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("open");
@@ -202,25 +201,15 @@ window.onload = function () {
 
   slider = document.getElementById("slider");
 
-// ننسخ الكروت
-let cards = slider.innerHTML;
-slider.innerHTML += cards;
-
   // Auto slider
-  const step = 150;
-
-setInterval(() => {
-  if (!slider) return;
-
-  slider.scrollLeft += step;
-
-  let half = slider.scrollWidth / 2;
-
-  // أول ما تعدي نص السلايدر (يعني خلصت النسخة الأصلية)
-  if (slider.scrollLeft >= half) {
-    slider.scrollLeft -= half;
-  }
-}, 2500);
+  setInterval(() => {
+    if (!slider) return;
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+      slider.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      slider.scrollBy({ left: 130, behavior: "smooth" });
+    }
+  }, 3000);
 
   // Caffeine bars
   document.querySelectorAll(".fill").forEach(bar => {
