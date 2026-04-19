@@ -144,9 +144,7 @@ function scrollToProduct(name) {
 // ===== SLIDER =====
 let slider;
 
-function moveSlider(dir) {
-  // مش محتاجة للـ CSS animation
-}
+function moveSlider(dir) {}
 
 // ===== INIT =====
 window.onload = function() {
@@ -154,10 +152,13 @@ window.onload = function() {
 
   slider = document.getElementById("slider");
 
-  // Infinite slider - clone cards
+  // Infinite slider - clone cards 3 times عشان يفضل فيه content
   if (slider) {
     let cards = Array.from(slider.children);
-    cards.forEach(card => slider.appendChild(card.cloneNode(true)));
+    // clone 3 مرات عشان الـ animation تلاقي content كفاية
+    for (let i = 0; i < 3; i++) {
+      cards.forEach(card => slider.appendChild(card.cloneNode(true)));
+    }
   }
 
   // Caffeine bars
