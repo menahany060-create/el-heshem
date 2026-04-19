@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>بن الحشم</title>
 <meta name="description" content="🔥 صحصح بمزاج... قهوتك الصح لكل يوم تقيل! ⚡ كافيين عالي = طاقة أعلى 👌 طعم مظبوط يخليك دايمًا في المود">
 <meta property="og:title" content="☕ بن الحشم">
@@ -25,7 +25,7 @@
   <div class="logoText">بن الحشم ☕</div>
 
   <!-- ✅ زرار المنيو -->
-  <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+  <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="القائمة">
     <span></span>
     <span></span>
     <span></span>
@@ -195,6 +195,7 @@
   <div class="popup-content" onclick="event.stopPropagation()">
     <h3>تأكيد الطلب</h3>
     <input id="name" placeholder="الاسم">
+    <input id="phone" placeholder="رقم الهاتف" type="tel" inputmode="numeric">
     <input id="address" placeholder="العنوان">
     <button class="checkoutBtn" onclick="send()">إرسال واتساب</button>
   </div>
