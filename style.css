@@ -162,33 +162,20 @@ body::before {
 .slider {
   display: flex;
   gap: 10px;
-  padding: 10px 5px;
+  padding: 10px 0;
   width: max-content;
-  animation: infiniteScroll 20s linear infinite;
+  animation: infiniteScroll 18s linear infinite;
 }
 
-.slider:hover {
-  animation-play-state: paused;
-}
-
-/* 
-  عندنا 5 كروت أصليين + 15 clones = 20 كارت
-  الـ animation بتتحرك بـ translateX
-  كل كارت = 150px + 10px gap = 160px
-  5 كروت = 800px
-  بنحرك 800px = عرض الـ original بالظبط
-*/
 @keyframes infiniteScroll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(calc(-160px * 5)); }
+  100% { transform: translateX(-50%); }
 }
 
 .slider-wrapper {
   overflow: hidden;
-  padding: 0 38px;
+  width: 100%;
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
 .slide-card {
