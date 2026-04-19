@@ -152,10 +152,18 @@ window.onload = function() {
 
   slider = document.getElementById("slider");
 
-  // Infinite slider - clone once = -50% animation صح
+  // Infinite slider
   if (slider) {
     let cards = Array.from(slider.children);
-    cards.forEach(card => slider.appendChild(card.cloneNode(true)));
+    cards.forEach(function(card) { slider.appendChild(card.cloneNode(true)); });
+
+    setTimeout(function() {
+      var w = 0;
+      cards.forEach(function(card) { w += card.offsetWidth + 10; });
+      var styleEl = document.createElement("style");
+      styleEl.innerHTML = "@keyframes infiniteScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-" + w + "px); } } #slider { animation: infiniteScroll 18s linear infinite !important; }";
+      document.head.appendChild(styleEl);
+    }, 200);
   }
 
   // Caffeine bars
