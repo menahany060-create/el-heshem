@@ -46,56 +46,39 @@
   <button class="slider-btn left" onclick="moveSlider(-1)">‹</button>
   <div class="slider" id="slider">
 
-    <div class="slide-card">
+    <div class="slide-card" onclick="scrollToProduct('الحشم')" style="cursor:pointer">
       <span class="badge">🔥</span>
       <img src="hashm.png">
       <p>الحشم</p>
-      <select onchange="updatePrice(this)">
-        <option value="125-150"> جرام(125) - 150 جنيه</option>
-        <option value="250-250"> جرام (250)- 250 جنيه</option>
-        <option value="500-350"> جرام(500) - 350 جنيه</option>
-      </select>
-      <button class="neonBtn" onclick="addProduct(this,'الحشم')">إضافة للسلة</button>
-      <button onclick="openStory('الحشم','قوة وكافيين عالي 🔥')">تفاصيل</button>
+      <small class="slide-hint">اضغط للمنتج ↓</small>
     </div>
 
-    <div class="slide-card">
+    <div class="slide-card" onclick="scrollToProduct('ESPRESSO')" style="cursor:pointer">
       <span class="badge">🔥</span>
       <img src="espresso.png">
       <p>ESPRESSO</p>
-      <select onchange="updatePrice(this)">
-        <option value="125-150"> جرام(125) - 150 جنيه</option>
-        <option value="250-250"> جرام (250)- 250 جنيه</option>
-        <option value="500-350"> جرام(500) - 350 جنيه</option>
-      </select>
-      <button class="neonBtn" onclick="addProduct(this,'ESPRESSO')">إضافة للسلة</button>
-      <button onclick="openStory('ESPRESSO','جرعة مركزة تعيشك فايق 🔥')">تفاصيل</button>
+      <small class="slide-hint">اضغط للمنتج ↓</small>
     </div>
 
-    <div class="slide-card">
+    <div class="slide-card" onclick="scrollToProduct('السكة')" style="cursor:pointer">
       <span class="badge">🔥</span>
       <img src="sikka.png">
       <p>ع السكة</p>
-      <select onchange="updatePrice(this)">
-        <option value="125-150"> جرام(125) - 150 جنيه</option>
-        <option value="250-250"> جرام (250)- 250 جنيه</option>
-        <option value="500-350"> جرام(500) - 350 جنيه</option>
-      </select>
-      <button class="neonBtn" onclick="addProduct(this,'السكة')">إضافة للسلة</button>
-      <button onclick="openStory('السكة','تركيز عالي أثناء السفر 🚀')">تفاصيل</button>
+      <small class="slide-hint">اضغط للمنتج ↓</small>
     </div>
 
-    <div class="slide-card">
+    <div class="slide-card" onclick="scrollToProduct('الجدع')" style="cursor:pointer">
       <span class="badge">🔥</span>
       <img src="gad3.png">
       <p>الجدع</p>
-      <select onchange="updatePrice(this)">
-        <option value="125-150"> جرام(125) - 150 جنيه</option>
-        <option value="250-250"> جرام (250)- 250 جنيه</option>
-        <option value="500-350"> جرام(500) - 350 جنيه</option>
-      </select>
-      <button class="neonBtn" onclick="addProduct(this,'الجدع')">إضافة للسلة</button>
-      <button onclick="openStory('الجدع','خفيف وناعم 😄')">تفاصيل</button>
+      <small class="slide-hint">اضغط للمنتج ↓</small>
+    </div>
+
+    <div class="slide-card" onclick="scrollToProduct('أيوب')" style="cursor:pointer">
+      <span class="badge">🔥</span>
+      <img src="ayoub.png">
+      <p>أيوب</p>
+      <small class="slide-hint">اضغط للمنتج ↓</small>
     </div>
 
   </div>
@@ -105,7 +88,7 @@
 <!-- PRODUCTS -->
 <div class="products">
 
-  <div class="card top">
+  <div class="card top" id="product-الحشم">
     <img src="hashm.png">
     <h3>توليفة الحشم</h3>
     <div class="bar"><div class="fill" data-caffeine="90"><span class="percent">90%</span></div></div>
@@ -120,7 +103,7 @@
     <button class="neonBtn" onclick="addProduct(this,'الحشم')">إضافة للسلة</button>
   </div>
 
-  <div class="card top">
+  <div class="card top" id="product-أيوب">
     <img src="ayoub.png">
     <h3>توليفة أيوب</h3>
     <div class="bar"><div class="fill" data-caffeine="65"><span class="percent">65%</span></div></div>
@@ -135,7 +118,7 @@
     <button class="neonBtn" onclick="addProduct(this,'أيوب')">إضافة للسلة</button>
   </div>
 
-  <div class="card top">
+  <div class="card top" id="product-السكة">
     <img src="sikka.png">
     <h3>توليفة ع السكة</h3>
     <div class="bar"><div class="fill" data-caffeine="80"><span class="percent">80%</span></div></div>
@@ -150,7 +133,7 @@
     <button class="neonBtn" onclick="addProduct(this,'السكة')">إضافة للسلة</button>
   </div>
 
-  <div class="card top">
+  <div class="card top" id="product-الجدع">
     <img src="gad3.png">
     <h3>توليفة الجدع</h3>
     <div class="bar"><div class="fill" data-caffeine="50"><span class="percent">50%</span></div></div>
@@ -165,7 +148,7 @@
     <button class="neonBtn" onclick="addProduct(this,'الجدع')">إضافة للسلة</button>
   </div>
 
-  <div class="card top">
+  <div class="card top" id="product-ESPRESSO">
     <img src="espresso.png">
     <h3>ESPRESSO</h3>
     <div class="bar"><div class="fill" data-caffeine="95"><span class="percent">95%</span></div></div>
