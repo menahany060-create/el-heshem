@@ -605,8 +605,6 @@ input::placeholder { color: #888; }
   padding: 10px 12px 20px;
   max-width: 700px;
   margin: 0 auto;
-  width: 100%;
-  overflow-x: hidden;
 }
 
 .bs-card {
@@ -689,9 +687,7 @@ input::placeholder { color: #888; }
   gap: 12px;
   padding: 10px 12px 20px;
   max-width: 1200px;
-  width: 100%;
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .offer-card {
@@ -777,20 +773,50 @@ input::placeholder { color: #888; }
   .offers {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
-    padding: 8px 8px 16px;
-    width: 100%;
-    overflow: hidden;
+    padding: 8px;
   }
-  .offer-card {
-    width: 100%;
-    min-width: 0;
-    overflow: hidden;
-    padding: 10px 8px;
-  }
-  .offer-card img { height: 90px; }
-  .offer-card h3 { font-size: 12px; margin: 6px 0 3px; }
+  .offer-card img { height: 100px; }
+  .offer-card h3 { font-size: 12px; }
   .old-price { font-size: 11px; }
-  .new-price { font-size: 13px; margin: 3px 0 6px; }
-  .offer-badge { font-size: 10px; padding: 3px 6px; top: 5px; right: 5px; }
-  .offer-card .neonBtn { font-size: 11px; padding: 8px 6px; min-height: 38px; margin: 3px 0; }
+  .new-price { font-size: 14px; }
+  .offer-badge { font-size: 10px; padding: 3px 6px; }
 }
+/* ===== PROMO CODE ===== */
+.promo-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 10px 0 4px;
+}
+
+.promo-row input {
+  flex: 1;
+  margin: 0;
+}
+
+.promoBtn {
+  padding: 0 16px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #00f0ff;
+  border-radius: 10px;
+  color: #00f0ff;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.promoBtn:hover, .promoBtn:active {
+  background: #00f0ff;
+  color: #000;
+}
+
+#promoMsg {
+  font-size: 13px;
+  margin: 4px 0 8px;
+  min-height: 18px;
+  text-align: center;
+    }
