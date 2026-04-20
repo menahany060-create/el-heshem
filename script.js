@@ -3,9 +3,21 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addProduct(btn, name) {
   let card = btn.parentElement;
+
+  // ✅ Sold Out Check
+  if (card.dataset.status === "sold-out") {
+    showToast("❌ المنتج ده نفذ من المخزن!");
+    return;
+  }
+
   let select = card.querySelector("select");
   let [weight, price] = select.value.split("-");
   add(name + " (" + weight + "g)", Number(price));
+}
+
+// ===== ADD OFFER TO CART =====
+function addOffer(btn, name, price) {
+  add(name, price);
 }
 
 function updatePrice(select) {
@@ -181,5 +193,22 @@ window.onload = function() {
       count++;
       if (percentText) percentText.innerText = count + "%";
     }, 15);
+  });
+
+  // ✅ Sold Out Badges
+  document.querySelectorAll(".card[data-status='sold-out']").forEach(card => {
+    let badge = document.createElement("div");
+    badge.className = "sold-out-badge";
+    badge.innerText = "❌ نفذ من المخزن";
+    card.querySelector("img").after(badge);
+
+    // disable add to cart button
+    let addBtn = card.querySelectorAll(".neonBtn");
+    addBtn.forEach(btn => {
+      if (btn.innerText.includes("إضافة")) {
+        btn.style.opacity = "0.4";
+        btn.style.cursor = "not-allowed";
+      }
+    });
   });
 };
