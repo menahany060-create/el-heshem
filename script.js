@@ -72,7 +72,7 @@ function openStory(t, x) {
 }
 
 function openSpecs(t, x) {
-  document.getElementById("title").innerText = "المواصفات: " + t;
+  document.getElementById("title").innerText = "نسبة التحميص : " + t;
   document.getElementById("text").innerText = x;
   document.getElementById("popup").classList.add("active");
 }
