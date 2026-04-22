@@ -2,26 +2,28 @@
 <html lang="ar">
 <head>
   <link rel="icon" href="logo.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>بن الحشم</title>
-<meta name="description" content="🔥 صحصح بمزاج... قهوتك الصح لكل يوم تقيل! ⚡ كافيين عالي = طاقة أعلى 👌 طعم مظبوط يخليك دايمًا في المود">
-<meta property="og:title" content="☕ بن الحشم">
-<meta property="og:description" content="⚡ طاقة يومك في كوباية ☕ 💥 قهوة تقيلة… مزاج عالي 👌 اختار توليفتك بنفسك وابدأ صح 🚀 ابدأ يومك صح.. وكمل للآخر">
-<meta property="og:image" content="https://your-site.com/coffee.jpg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="☕ بن الحشم">
-<meta name="twitter:description" content="🔥 صحصح بمزاج... قهوتك الصح لكل يوم تقيل! ⚡ كافيين عالي = طاقة أعلى">
-<meta name="twitter:image" content="https://your-site.com/coffee.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>بن الحشم</title>
+  <meta name="description" content="🔥 صحصح بمزاج... قهوتك الصح لكل يوم تقيل! ⚡ كافيين عالي = طاقة أعلى 👌 طعم مظبوط يخليك دايمًا في المود">
+  <meta property="og:title" content="☕ بن الحشم">
+  <meta property="og:description" content="⚡ طاقة يومك في كوباية ☕ 💥 قهوة تقيلة… مزاج عالي 👌 اختار توليفتك بنفسك وابدأ صح">
+  <!-- ⚠️ غير الرابط ده برابط صورة حقيقية من موقعك -->
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="☕ بن الحشم">
+  <meta name="twitter:description" content="🔥 صحصح بمزاج... قهوتك الصح لكل يوم تقيل!">
+  <meta name="twitter:image" content="https://your-site.com/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ===== HEADER ===== -->
 <div class="header">
-  <img class="logo" src="logo.png">
+  <img class="logo" src="logo.png" onerror="this.style.display='none'">
   <div class="logoText">بن الحشم ☕</div>
 
   <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="القائمة">
@@ -31,204 +33,278 @@
   </button>
 
   <div class="nav-menu" id="navMenu">
-    <a href="#">🏠 الرئيسية</a>
-    <a href="#">☕ المنتجات</a>
+    <a href="#hero" onclick="closeMenu()">🏠 الرئيسية</a>
+    <a href="#products-section" onclick="closeMenu()">☕ المنتجات</a>
+    <a href="#offers-section" onclick="closeMenu()">🔥 العروض</a>
     <a href="#" onclick="openCheckout(); closeMenu()">🛒 اطلب الآن</a>
-    <a href="https://wa.me/201223136302" target="_blank">📞 تواصل معنا</a>
+    <a href="https://wa.me/201223136302" target="_blank" onclick="closeMenu()">📞 تواصل معنا</a>
   </div>
 </div>
 
-<h3 class="section-title">🔥 الأكثر مبيعًا</h3>
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <img class="hero-logo" src="logo.png" onerror="this.style.display='none'">
+    <p class="hero-eyebrow">☕ توليفات مختارة بعناية</p>
+    <h1 class="hero-title">بن الحشم</h1>
+    <p class="hero-tagline">صحصح بمزاج 🔥</p>
+    <p class="hero-desc">قهوة تقيلة و طعم مظبوط — اختار توليفتك وابدأ يومك صح</p>
+    <div class="hero-actions">
+      <a href="#products-section" class="hero-btn-primary">اكتشف التوليفات ←</a>
+      <a href="#offers-section" class="hero-btn-outline">شوف العروض 🔥</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">توليفات</span></div>
+      <div class="stat"><span class="stat-num">95%</span><span class="stat-label">أعلى كافيين</span></div>
+      <div class="stat"><span class="stat-num">24h</span><span class="stat-label">توصيل سريع</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" onclick="document.getElementById('bestsellers-section').scrollIntoView({behavior:'smooth'})">
+    <span>↓</span>
+  </div>
+</section>
 
-<div class="bestsellers">
+<!-- ===== BESTSELLERS ===== -->
+<section id="bestsellers-section">
+  <h3 class="section-title">🏆 الأكثر مبيعاً</h3>
+  <div class="bestsellers">
+    <div class="bs-card" onclick="scrollToProduct('الحشم')">
+      <span class="badge">🔥</span>
+      <img src="hashm.png" onerror="this.src=''; this.alt='☕'; this.style.fontSize='2.5rem'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'">
+      <p>الحشم</p>
+    </div>
+    <div class="bs-card" onclick="scrollToProduct('أيوب')">
+      <span class="badge">⭐</span>
+      <img src="ayoub.png" onerror="this.src=''; this.alt='☕'">
+      <p>أيوب</p>
+    </div>
+    <div class="bs-card" onclick="scrollToProduct('السكة')">
+      <span class="badge">🚗</span>
+      <img src="sikka.png" onerror="this.src=''; this.alt='☕'">
+      <p>ع السكة</p>
+    </div>
+    <div class="bs-card" onclick="scrollToProduct('الجدع')">
+      <span class="badge">💪</span>
+      <img src="gad3.png" onerror="this.src=''; this.alt='☕'">
+      <p>الجدع</p>
+    </div>
+  </div>
+</section>
 
-  <div class="bs-card" onclick="scrollToProduct('الحشم')">
-    <span class="badge">🔥</span>
-    <img src="hashm.png">
-    <p>الحشم</p>
+<!-- ===== OFFERS ===== -->
+<section id="offers-section">
+  <h3 class="section-title">🔥 العروض والخصومات</h3>
+
+  <!-- Offer Timer -->
+  <div class="offer-timer-bar">
+    <span class="timer-label">⏰ العرض ينتهي بعد:</span>
+    <div class="timer-blocks">
+      <div class="timer-block"><span id="timer-h">00</span><small>ساعة</small></div>
+      <div class="timer-sep">:</div>
+      <div class="timer-block"><span id="timer-m">00</span><small>دقيقة</small></div>
+      <div class="timer-sep">:</div>
+      <div class="timer-block"><span id="timer-s">00</span><small>ثانية</small></div>
+    </div>
   </div>
 
-  <div class="bs-card" onclick="scrollToProduct('أيوب')">
-    <span class="badge">🔥</span>
-    <img src="ayoub.png">
-    <p>أيوب</p>
+  <div class="offers">
+    <div class="offer-card">
+      <span class="offer-badge">-20%</span>
+      <img src="sikka.png" onerror="this.innerHTML='☕'; this.style.fontSize='3rem'">
+      <h3>ع السكة (500 جرام)</h3>
+      <p class="old-price">350 جنيه</p>
+      <p class="new-price">280 جنيه</p>
+      <button class="neonBtn" onclick="addOffer(this, 'ع السكة 500g عرض', 280)">إضافة للسلة 🛒</button>
+      <button class="share-btn" onclick="shareProduct('ع السكة', 280)">مشاركة ↗</button>
+    </div>
+
+    <div class="offer-card">
+      <span class="offer-badge">-50%</span>
+      <img src="gad3.png" onerror="this.innerHTML='☕'">
+      <h3>الجدع (500 جرام)</h3>
+      <p class="old-price">300 جنيه</p>
+      <p class="new-price">150 جنيه</p>
+      <button class="neonBtn" onclick="addOffer(this, 'الجدع 500g عرض', 175)">إضافة للسلة 🛒</button>
+      <button class="share-btn" onclick="shareProduct('الجدع', 175)">مشاركة ↗</button>
+    </div>
+
+    <div class="offer-card">
+      <span class="offer-badge">-23%</span>
+      <img src="offer1.png" onerror="this.innerHTML='☕'">
+      <h3>الحشم (500g) + مج حراري( 500 مل) + 3 كوب</h3>
+      <p class="old-price">850 جنيه</p>
+      <p class="new-price">625 جنيه</p>
+      <button class="neonBtn" onclick="addOffer(this, 'عرض الحشم + مج حراري', 625)">إضافة للسلة 🛒</button>
+      <button class="share-btn" onclick="shareProduct('عرض الحشم + مج', 625)">مشاركة ↗</button>
+    </div>
   </div>
+</section>
 
-</div>
+<!-- ===== PRODUCTS ===== -->
+<section id="products-section">
+  <h3 class="section-title">☕ كل التوليفات</h3>
 
-<!-- OFFERS SECTION -->
-<h3 class="section-title">🔥 العروض والخصومات</h3>
+  <div class="products">
 
-<div class="offers">
+    <div class="card top" id="product-الحشم" data-status="available">
+      <img src="hashm.png" onerror="this.src=''; this.parentElement.querySelector('.img-fallback').style.display='flex'">
+      <div class="img-fallback">☕</div>
+      <h3>توليفة الحشم</h3>
+      <div class="bar"><div class="fill" data-caffeine="90"><span class="percent">0%</span></div></div>
+      <small>كافيين 90%</small>
+      <button class="neonBtn" onclick="openStory('No Pain... No Gain 💪','مفيش حاجه هتجيلك لحد عندك، اسعى واجتهد وربنا هيديك على قد تعبك، واوعي تيأس لأن مفيش حلاوه من غير نار. عايزك تتأكد دايما ان ربنا هيديك على قد تعبك — واحنا عملنالك التوليفه الى هتخليك تكمل مشوارك باقصى طاقه ممكنه 💪🏻 واعلى كافيين ممكن🔥')">ليه تشرب توليفة الحشم؟</button>
+      <button class="neonBtn specs-btn" onclick="openSpecs('وسط','أنواع البن: برازيلي + كولومبي')">📋 المواصفات</button>
+      <select onchange="updatePrice(this)">
+        <option value="125-150">125 جرام — 150 جنيه</option>
+        <option value="250-270">250 جرام — 270 جنيه</option>
+        <option value="500-550">500 جرام — 550 جنيه</option>
+      </select>
+      <button class="neonBtn add-btn" onclick="addProduct(this,'الحشم')">🛒 إضافة للسلة</button>
+      <button class="share-btn" onclick="shareProduct('توليفة الحشم', 150)">مشاركة ↗</button>
+    </div>
 
-  <div class="offer-card">
-    <span class="offer-badge">-20%</span>
-    <img src="sikka.png">
-    <h3> ع السكة (500 جرام)</h3>
-    <p class="old-price">350 جنيه</p>
-    <p class="new-price">280 جنيه</p>
-    <button class="neonBtn" onclick="addOffer(this, 'الحشم 250g عرض', 280)">إضافة للسلة</button>
+    <div class="card top" id="product-أيوب" data-status="available">
+      <img src="ayoub.png" onerror="this.src=''; this.parentElement.querySelector('.img-fallback').style.display='flex'">
+      <div class="img-fallback">☕</div>
+      <h3>توليفة أيوب</h3>
+      <div class="bar"><div class="fill" data-caffeine="65"><span class="percent">0%</span></div></div>
+      <small>كافيين 65%</small>
+      <button class="neonBtn" onclick="openStory('اشرب الصبر واستمتع بالفرج ❤️','سيدنا ايوب كان غني وعندو اولاد وصحه وفلوس مبتخلصش، وربنا ابتلاه بخسارة فلوسه وموت اولاده ومرض استمر معاه 18 سنه، بس سيدنا ايوب صبر وقال الحمدلله لحد ما ربنا فرجها عليه وعوضه اضعاف. واحنا عملنالك توليفة ايوب عشان تساعدك على الصبر في حياتك، وافتكر دايما ان الصبر هو مفتاح الفرج ❤️')">ليه تشرب توليفة أيوب؟</button>
+      <button class="neonBtn specs-btn" onclick="openSpecs('وسط','أنواع البن: برازيلي + كولومبي')">📋 المواصفات</button>
+      <select onchange="updatePrice(this)">
+        <option value="125-110">125 جرام — 110 جنيه</option>
+        <option value="250-200">250 جرام — 200 جنيه</option>
+        <option value="500-350">500 جرام — 350 جنيه</option>
+      </select>
+      <button class="neonBtn add-btn" onclick="addProduct(this,'أيوب')">🛒 إضافة للسلة</button>
+      <button class="share-btn" onclick="shareProduct('توليفة أيوب', 110)">مشاركة ↗</button>
+    </div>
+
+    <div class="card top" id="product-السكة" data-status="available">
+      <img src="sikka.png" onerror="this.src=''; this.parentElement.querySelector('.img-fallback').style.display='flex'">
+      <div class="img-fallback">☕</div>
+      <h3>توليفة ع السكة</h3>
+      <div class="bar"><div class="fill" data-caffeine="80"><span class="percent">0%</span></div></div>
+      <small>كافيين 80%</small>
+      <button class="neonBtn" onclick="openStory('استمتع بالرحله... السكه طويله 🚗','مسافر وسكتك طويله؟ مفيش حاجه هتفوقك غير كباية القهوه الزياده. واحنا عملنالك توليفة ع السكه عشان تساعدك تركز لوقت اطول في رحلتك، اشرب وصحصح لطريقك، توصل بالسلامه يا صديقي ❤️')">ليه تشرب توليفة ع السكة؟</button>
+      <button class="neonBtn specs-btn" onclick="openSpecs('وسط','أنواع البن: برازيلي + كولومبي')">📋 المواصفات</button>
+      <select onchange="updatePrice(this)">
+        <option value="125-90">125 جرام — 90 جنيه</option>
+        <option value="250-200">250 جرام — 200 جنيه</option>
+        <option value="500-350">500 جرام — 350 جنيه</option>
+      </select>
+      <button class="neonBtn add-btn" onclick="addProduct(this,'السكة')">🛒 إضافة للسلة</button>
+      <button class="share-btn" onclick="shareProduct('توليفة ع السكة', 90)">مشاركة ↗</button>
+    </div>
+
+    <div class="card top" id="product-الجدع" data-status="available">
+      <img src="gad3.png" onerror="this.src=''; this.parentElement.querySelector('.img-fallback').style.display='flex'">
+      <div class="img-fallback">☕</div>
+      <h3>توليفة الجدع</h3>
+      <div class="bar"><div class="fill" data-caffeine="50"><span class="percent">0%</span></div></div>
+      <small>كافيين 50%</small>
+      <button class="neonBtn" onclick="openStory('توليفة الجدع... لكل راجل جدع 😉','مفيش راجل جدع مش بيشرب قهوه، وقهوته مش بتبقى اى قهوه. واحنا عملنالك التوليفه بتاعة الجدعان، اشرب وافتكر ان توليفة الجدع مش لأي حد 😉')">ليه تشرب توليفة الجدع؟</button>
+      <button class="neonBtn specs-btn" onclick="openSpecs('وسط','أنواع البن: برازيلي + كولومبي')">📋 المواصفات</button>
+      <select onchange="updatePrice(this)">
+        <option value="125-85">125 جرام — 85 جنيه</option>
+        <option value="250-180">250 جرام — 180 جنيه</option>
+        <option value="500-300">500 جرام — 300 جنيه</option>
+      </select>
+      <button class="neonBtn add-btn" onclick="addProduct(this,'الجدع')">🛒 إضافة للسلة</button>
+      <button class="share-btn" onclick="shareProduct('توليفة الجدع', 85)">مشاركة ↗</button>
+    </div>
+
+    <div class="card top" id="product-ESPRESSO" data-status="sold-out">
+      <img src="espresso.png" onerror="this.src=''; this.parentElement.querySelector('.img-fallback').style.display='flex'">
+      <div class="img-fallback">☕</div>
+      <h3>ESPRESSO</h3>
+      <div class="bar"><div class="fill" data-caffeine="95"><span class="percent">0%</span></div></div>
+      <small>كافيين 95%</small>
+      <button class="neonBtn" onclick="openStory('ESPRESSO 🔥','جرعة كافيين مركزة تعيشك فايق على الآخر!')">ليه تشرب ESPRESSO؟</button>
+      <button class="neonBtn specs-btn" onclick="openSpecs('ESPRESSO','تحميص داكن + نكهة قوية مركزة')">📋 المواصفات</button>
+      <select onchange="updatePrice(this)">
+        <option value="125-150">125 جرام — 150 جنيه</option>
+        <option value="250-250">250 جرام — 250 جنيه</option>
+        <option value="500-350">500 جرام — 350 جنيه</option>
+      </select>
+      <button class="neonBtn add-btn" onclick="addProduct(this,'ESPRESSO')">🛒 إضافة للسلة</button>
+    </div>
+
   </div>
+</section>
 
-  <div class="offer-card">
-    <span class="offer-badge">-50%</span>
-    <img src="gad3.png">
-    <h3>الجدع (جرام 500)</h3>
-    <p class="old-price">350 جنيه</p>
-    <p class="new-price">175جنيه</p>
-    <button class="neonBtn" onclick="addOffer(this, ' 500g عرض الجدع', 175)">إضافة للسلة</button>
+<!-- ===== CART ===== -->
+<section id="cart-section">
+  <div class="cart">
+    <h3>🛒 سلة التسوق</h3>
+    <div id="box"></div>
+    <div id="empty-cart-msg" class="empty-cart">سلتك فارغة — ابدأ بإضافة توليفتك ☕</div>
+    <div class="promo-row">
+      <input id="promoCode" placeholder="كود الخصم (اختياري)" autocomplete="off">
+      <button class="promoBtn" onclick="applyPromo()">تطبيق</button>
+    </div>
+    <p id="promoMsg"></p>
+    <p id="discountLine" style="display:none;"></p>
+    <div class="cart-total-row">
+      <span>الإجمالي:</span>
+      <span id="total" class="total-amount">0 جنيه</span>
+    </div>
+    <button class="checkoutBtn" onclick="openCheckout()">✅ تأكيد الطلب</button>
   </div>
+</section>
 
-  <!-- منتج جديد - غير الصورة والبيانات -->
-  <div class="offer-card">
-    <span class="offer-badge">-23%</span>
-    <img src="offer1.png">
-    <h3>الحشم(500 جرام)+ مج حراري (500 مل) مع 3 كوب</h3>
-    <p class="old-price">850 جنيه</p>
-    <p class="new-price">625 جنيه</p>
-    <button class="neonBtn" onclick="addOffer(this, 'عرض الحشم+ مج حراري ', 625)">إضافة للسلة</button>
-  </div>
-
-</div>
-
-<!-- PRODUCTS -->
-<div class="products">
-
-  <div class="card top" id="product-الحشم" data-status="available">
-    <img src="hashm.png">
-    <h3>توليفة الحشم</h3>
-    <div class="bar"><div class="fill" data-caffeine="90"><span class="percent">90%</span></div></div>
-    <small>كافيين 90%</small>
-    <button class="neonBtn" onclick="openStory('No Pain...No Gain','مفيش حاجه هتجيلك لحد عندك ، اسعى و اجتهد و ربنا هيديك على قد تعبك ، و اوعي تيأس لأن مفيش حلاوه من غير نار ، عايزك تتأكد دايما ان ربنا هيديك على قد تعبك_ و احنا عملنالك التوليفه الى هتخليك تكمل مشوارك ب اقصى طاقه ممكنه 💪🏻واعلى كافيين ممكن🔥 ')">ليه تشرب توليفة الحشم؟</button>
-    <button class="neonBtn" onclick="openSpecs('وسط','انواع البن : برازيلي + كولومبي')">المواصفات</button>
-    <select onchange="updatePrice(this)">
-      <option value="125-150"> جرام(125) - 150 جنيه</option>
-      <option value="250-270"> جرام (250)- 270 جنيه</option>
-      <option value="500-550"> جرام(500) - 550 جنيه</option>
-    </select>
-    <button class="neonBtn" onclick="addProduct(this,'الحشم')">إضافة للسلة</button>
-  </div>
-
-  <div class="card top" id="product-أيوب" data-status="available">
-    <img src="ayoub.png">
-    <h3>توليفة أيوب</h3>
-    <div class="bar"><div class="fill" data-caffeine="65"><span class="percent">65%</span></div></div>
-    <small>كافيين 65%</small>
-    <button class="neonBtn" onclick="openStory('اشرب الصبر و استمتع بالفرج ',
-'سيدنا ايوب كان غني و عندو اولاد و صحه و فلوس مبتخلصش ، و ربنا ابتلاه بخسارة فلوسه و موت اولاده و مرض استمر معاه ١٨ سنه بحالهم! ، بس سيدنا ايوب صبر كل دا و قال الحمدلله لحد ما ربنا فرجها عليه و عوضه اضعاف _ و احنا عملنالك توليفة ايوب عشان تساعدك على الصبر ف حياتك ، و افتكر دايما ان الصبر هو مفتاح الفرج ❤️')">ليه تشرب توليفة ايوب؟</button>
-<button class="neonBtn" onclick="openSpecs(' وسط','انواع البن : برازيلي + كولومبي')">المواصفات</button>
-    <select onchange="updatePrice(this)">
-      <option value="125-110"> جرام(125) - 110 جنيه</option>
-      <option value="250-200"> جرام (250)- 200 جنيه</option>
-      <option value="500-350"> جرام(500) - 350 جنيه</option>
-    </select>
-    <button class="neonBtn" onclick="addProduct(this,'أيوب')">إضافة للسلة</button>
-  </div>
-
-  <div class="card top" id="product-السكة" data-status="available">
-    <img src="sikka.png">
-    <h3>توليفة ع السكة</h3>
-    <div class="bar"><div class="fill" data-caffeine="80"><span class="percent">80%</span></div></div>
-    <small>كافيين 80%</small>
-    <button class="neonBtn" onclick="openStory(' استمتع بالرحله...السكه طويله',
-'مسافر و سكتك طويله ؟ مفيش حاجه هتفوقك غير كباية القهوه الزياده _ و اخنا عملنالك توليفة ع السكه عشان تساعدك تركز لوقت اطول ف رحلتك ، اشرب و صحصح لطريقك ، توصل بالسلامه يا صديقي ❤️'
-)">ليه تشرب توليفة ع السكة؟</button>
-    <button class="neonBtn" onclick="openSpecs(' وسط','انواع البن : برازيلي + كولومبي')">المواصفات</button>
-    <select onchange="updatePrice(this)">
-      <option value="125-90"> جرام(125) - 90 جنيه</option>
-      <option value="250-200"> جرام (250)- 200 جنيه</option>
-      <option value="500-350"> جرام(500) - 350 جنيه</option>
-    </select>
-    <button class="neonBtn" onclick="addProduct(this,'السكة')">إضافة للسلة</button>
-  </div>
-
-  <div class="card top" id="product-الجدع" data-status="available">
-    <img src="gad3.png">
-    <h3>توليفة الجدع</h3>
-    <div class="bar"><div class="fill" data-caffeine="50"><span class="percent">50%</span></div></div>
-    <small>كافيين 50%</small>
-    <button class="neonBtn" onclick="openStory(' توليفة الجدع ...لكل راجل جدع',
-'مفيش راجل جدع مش بيشرب قهوه ، و قهوته مش بتبقى اى قهوه _ و احنا عملنالك التوليفه بتاعة الجدعان ، اشرب و افتكر ان توليفة الجدع مش لأي حد 😉'
-)">ليه تشرب توليفة الجدع؟</button>
-   <button class="neonBtn" onclick="openSpecs(' وسط','انواع البن : برازيلي + كولومبي')">المواصفات</button>
-    <select onchange="updatePrice(this)">
-      <option value="125-85"> جرام(125) - 85 جنيه</option>
-      <option value="250-180"> جرام (250)- 180 جنيه</option>
-      <option value="500-300"> جرام(500) - 300 جنيه</option>
-    </select>
-    <button class="neonBtn" onclick="addProduct(this,'الجدع')">إضافة للسلة</button>
-  </div>
-
-  <div class="card top" id="product-ESPRESSO" data-status="sold-out">
-    <img src="espresso.png">
-    <h3>ESPRESSO</h3>
-    <div class="bar"><div class="fill" data-caffeine="95"><span class="percent">95%</span></div></div>
-    <small>كافيين 95%</small>
-    <button class="neonBtn" onclick="openStory('ESPRESSO','جرعة كافيين مركزة 🔥 تعيشك فايق على الآخر')">ليه تشرب ESPRESSO؟</button>
-    <button class="neonBtn" onclick="openSpecs('ESPRESSO','تحميص داكن + نكهة قوية مركزة')">المواصفات</button>
-    <select onchange="updatePrice(this)">
-      <option value="125-150"> جرام(125) - 150 جنيه</option>
-      <option value="250-250"> جرام (250)- 250 جنيه</option>
-      <option value="500-350"> جرام(500) - 350 جنيه</option>
-    </select>
-    <button class="neonBtn" onclick="addProduct(this,'ESPRESSO')">إضافة للسلة</button>
-  </div>
-
-</div>
-
-<!-- CART -->
-<div class="cart">
-  <h3>🛒 السلة</h3>
-  <div id="box"></div>
-  <h4>الإجمالي: <span id="total">0</span></h4>
-  <div class="promo-row">
-  <input id="promoCode" placeholder="كود الخصم (اختياري)">
-  <button class="promoBtn" onclick="applyPromo()">تطبيق</button>
-</div>
-<p id="promoMsg"></p>
-<p id="discountLine" style="display:none; color:#00ff8c; font-weight:bold; text-align:center;"></p>
-  <button class="checkoutBtn" onclick="openCheckout()">تأكيد الطلب</button>
-</div>
-
-<!-- CHECKOUT -->
+<!-- ===== CHECKOUT POPUP ===== -->
 <div id="checkout" class="popup" onclick="closePopup()">
   <div class="popup-content" onclick="event.stopPropagation()">
-    <h3>تأكيد الطلب</h3>
-    <input id="name" placeholder="الاسم">
-    <input id="phone" placeholder="رقم الهاتف" type="tel" inputmode="numeric">
-    <input id="address" placeholder="العنوان">
-    <button class="checkoutBtn" onclick="send()">إرسال واتساب</button>
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <h3>📦 تأكيد الطلب</h3>
+    <p class="popup-subtitle">هنبعتلك ملخص طلبك على واتساب</p>
+    <input id="name" placeholder="الاسم الكامل *" autocomplete="name">
+    <input id="phone" placeholder="رقم الهاتف *" type="tel" inputmode="numeric" autocomplete="tel">
+    <input id="address" placeholder="العنوان كامل *" autocomplete="street-address">
+    <button class="checkoutBtn" onclick="send()">📱 إرسال واتساب</button>
   </div>
 </div>
 
-<!-- POPUP -->
+<!-- ===== STORY/SPECS POPUP ===== -->
 <div id="popup" class="popup" onclick="closePopup()">
-  <div class="popup-content">
+  <div class="popup-content" onclick="event.stopPropagation()">
+    <button class="popup-close" onclick="closePopup()">✕</button>
     <h3 id="title"></h3>
     <p id="text"></p>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-content">
     <h3>☕ بن الحشم</h3>
-    ملحوظة: احنا بنستخدم أجود أنواع البن الموجودة في العالم لكن كل توليفة بنسب مختلفه
-    <p>شركة (بن الحشم) التابعه لشركة (سميركو للاستيراد و التصدير) هي شركه اردنية الاصل تأسست عام 1983</p>
-    <p>العنوان: الاردن_السلط_شارع اليرموك</p>
-    <p>الهاتف: 00962799198420</p>
+    <p class="footer-note">بنستخدم أجود أنواع البن الموجودة في العالم — كل توليفة بنسب مختلفة</p>
+    <p>شركة (بن الحشم) التابعة لشركة (سميركو للاستيراد والتصدير) — أردنية الأصل تأسست عام 1983</p>
+    <p>📍 الأردن — السلط — شارع اليرموك</p>
+    <p>📞 <a href="tel:00962799198420" style="color:inherit">00962799198420</a></p>
+     <p>📞 <a href="tel:01067968244" style="color:inherit">01067968244</a></p>
     <div class="footer-links">
-      <a href="#">الرئيسية</a>
-      <a href="#">المنتجات</a>
+      <a href="#hero">الرئيسية</a>
+      <a href="#products-section">المنتجات</a>
+      <a href="#offers-section">العروض</a>
       <a href="#" onclick="openCheckout()">اطلب الآن</a>
     </div>
-    <p class="copy">© 2026 جميع الحقوق محفوظة - بن الحشم</p>
+    <p class="copy">© 2026 جميع الحقوق محفوظة — بن الحشم</p>
   </div>
 </footer>
 
-<div class="floating-cart" onclick="openCart()">
+<!-- ===== FLOATING BUTTONS ===== -->
+<div class="floating-cart" onclick="openCart()" title="السلة">
   🛒 <span id="cartCount">0</span>
 </div>
+
+<a href="https://wa.me/201223136302" target="_blank" class="floating-wa" title="واتساب">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
 
 <script src="script.js"></script>
 </body>
