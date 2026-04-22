@@ -959,7 +959,7 @@ input::placeholder { color: rgba(245,230,200,0.35); }
   .menu-btn { right: 10px; min-width: 40px; min-height: 40px; }
 
   .hero { padding: 90px 20px 50px; }
-  .hero-logo { height: 70px; }
+  .hero-logo { height: 140px; }
   .hero-stats { gap: 1.5rem; }
 
   .bestsellers {
