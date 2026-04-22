@@ -116,7 +116,7 @@ function openSpecs(roast, types) {
 
 function openCheckout() {
   if (cart.length === 0) {
-    showToast("🛒 السلة فارغة! أضف منتجات الأول");
+    showToast("🛒 السلة فارغة! ضيف منتجات الأول");
     return;
   }
   document.getElementById("checkout").classList.add("active");
