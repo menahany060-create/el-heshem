@@ -11,14 +11,14 @@ let appliedPromo = null;
 
 // ===== ADD PRODUCT FROM CARD =====
 function addProduct(btn, name) {
-  let card = btn.closest(".card");
+  let wrapper = btn.closest(".card-wrapper");
 
-  if (card.dataset.status === "sold-out") {
+  if (wrapper.dataset.status === "sold-out") {
     showToast("❌ المنتج ده نفذ من المخزن!");
     return;
   }
 
-  let select = card.querySelector("select");
+  let select = wrapper.querySelector("select");
   let parts  = select.value.split("-");
   let weight = parts[0];
   let price  = Number(parts[1]);
@@ -56,13 +56,13 @@ function changeQty(i, v) {
 
 // ===== RENDER CART =====
 function render() {
-  let box     = document.getElementById("box");
-  let totalEl = document.getElementById("total");
+  let box      = document.getElementById("box");
+  let totalEl  = document.getElementById("total");
   let emptyMsg = document.getElementById("empty-cart-msg");
   if (!box || !totalEl) return;
 
   box.innerHTML = "";
-  let rawTotal = 0;
+  let rawTotal  = 0;
 
   cart.forEach((c, i) => {
     rawTotal += c.price * c.qty;
@@ -78,19 +78,17 @@ function render() {
       </div>`;
   });
 
-  // Show/hide empty message
   if (emptyMsg) emptyMsg.style.display = cart.length === 0 ? "block" : "none";
 
-  // Re-apply promo if active (fixes recalculation after adding items)
-  let finalTotal = rawTotal;
+  let finalTotal   = rawTotal;
   let discountLine = document.getElementById("discountLine");
 
   if (appliedPromo && rawTotal > 0) {
     let discountAmt = Math.round(rawTotal * appliedPromo.discount / 100);
-    finalTotal = rawTotal - discountAmt;
+    finalTotal      = rawTotal - discountAmt;
     if (discountLine) {
       discountLine.style.display = "block";
-      discountLine.innerText = "🎟️ خصم " + appliedPromo.discount + "%: -" + discountAmt + " جنيه | الإجمالي: " + finalTotal + " جنيه";
+      discountLine.innerText     = "🎟️ خصم " + appliedPromo.discount + "%: -" + discountAmt + " جنيه | الإجمالي: " + finalTotal + " جنيه";
     }
   } else {
     if (discountLine) discountLine.style.display = "none";
@@ -99,6 +97,20 @@ function render() {
   totalEl.innerText = finalTotal + " جنيه";
   document.getElementById("cartCount").innerText = cart.reduce((s, i) => s + i.qty, 0);
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// ===== FLIP PRODUCT CARD =====
+function flipCard(btn) {
+  let wrapper = btn.closest(".card-wrapper");
+  let inner   = wrapper.querySelector(".card-inner");
+  inner.classList.toggle("flipped");
+}
+
+// ===== FLIP OFFER CARD =====
+function flipOfferCard(btn) {
+  let wrapper = btn.closest(".offer-card-wrapper");
+  let inner   = wrapper.querySelector(".offer-card-inner");
+  inner.classList.toggle("flipped");
 }
 
 // ===== POPUPS =====
@@ -126,7 +138,6 @@ function closePopup() {
   document.querySelectorAll(".popup").forEach(p => p.classList.remove("active"));
 }
 
-// ESC key closes popups
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape") closePopup();
 });
@@ -137,7 +148,6 @@ function send() {
   let phone   = document.getElementById("phone").value.trim();
   let address = document.getElementById("address").value.trim();
 
-  // Validation
   if (!name) {
     showToast("⚠️ من فضلك ادخل اسمك");
     document.getElementById("name").focus();
@@ -163,7 +173,7 @@ function send() {
     return;
   }
 
-  let rawTotal = cart.reduce((s, c) => s + c.price * c.qty, 0);
+  let rawTotal   = cart.reduce((s, c) => s + c.price * c.qty, 0);
   let finalTotal = rawTotal;
 
   let msg = "🛒 *طلب جديد — بن الحشم* ☕\n\n";
@@ -173,15 +183,14 @@ function send() {
   msg += "─────────────────\n";
 
   cart.forEach(c => {
-    let t = c.price * c.qty;
-    msg += "☕ " + c.name + " × " + c.qty + " = " + t + " جنيه\n";
+    msg += "☕ " + c.name + " × " + c.qty + " = " + (c.price * c.qty) + " جنيه\n";
   });
 
   msg += "─────────────────\n";
 
   if (appliedPromo) {
     let discountAmt = Math.round(rawTotal * appliedPromo.discount / 100);
-    finalTotal = rawTotal - discountAmt;
+    finalTotal      = rawTotal - discountAmt;
     msg += "🎟️ كود خصم (" + appliedPromo.code + "): -" + discountAmt + " جنيه\n";
   }
 
@@ -190,13 +199,13 @@ function send() {
   window.open("https://wa.me/201223136302?text=" + encodeURIComponent(msg));
 
   // Reset
-  cart = [];
-  localStorage.removeItem("cart");
+  cart         = [];
   appliedPromo = null;
+  localStorage.removeItem("cart");
 
   let promoInput = document.getElementById("promoCode");
   let promoMsg   = document.getElementById("promoMsg");
-  if (promoInput) promoInput.value = "";
+  if (promoInput) promoInput.value   = "";
   if (promoMsg)   promoMsg.innerText = "";
 
   document.getElementById("name").value    = "";
@@ -213,6 +222,17 @@ function openCart() {
   let cartEl = document.querySelector(".cart");
   if (cartEl) cartEl.scrollIntoView({ behavior: "smooth", block: "center" });
 }
+
+// ===== FLOATING SHARE HUB =====
+function toggleShareHub() {
+  document.getElementById("floatingShareHub").classList.toggle("open");
+}
+
+// إغلاق لو الكلك برا
+document.addEventListener("click", function(e) {
+  let hub = document.getElementById("floatingShareHub");
+  if (hub && !hub.contains(e.target)) hub.classList.remove("open");
+});
 
 // ===== MENU TOGGLE =====
 function toggleMenu() {
@@ -233,9 +253,8 @@ document.addEventListener("click", function(e) {
 
 // ===== PROMO CODE =====
 function applyPromo() {
-  let code    = document.getElementById("promoCode").value.trim().toUpperCase();
-  let msgEl   = document.getElementById("promoMsg");
-  let rawTotal = cart.reduce((s, c) => s + c.price * c.qty, 0);
+  let code     = document.getElementById("promoCode").value.trim().toUpperCase();
+  let msgEl    = document.getElementById("promoMsg");
 
   if (!code) {
     msgEl.style.color = "#E8855A";
@@ -244,15 +263,15 @@ function applyPromo() {
   }
 
   if (promoCodes[code]) {
-    appliedPromo = { code, discount: promoCodes[code] };
+    appliedPromo      = { code, discount: promoCodes[code] };
     msgEl.style.color = "#7BC67E";
     msgEl.innerText   = "✅ تم تطبيق خصم " + appliedPromo.discount + "%!";
-    render(); // re-render to show updated total
+    render();
   } else {
-    appliedPromo = null;
+    appliedPromo      = null;
     msgEl.style.color = "#E8855A";
     msgEl.innerText   = "❌ الكود غير صحيح، حاول تاني";
-    let discountLine = document.getElementById("discountLine");
+    let discountLine  = document.getElementById("discountLine");
     if (discountLine) discountLine.style.display = "none";
     render();
   }
@@ -269,7 +288,6 @@ function shareProduct(name, price) {
       url:   window.location.href
     }).catch(() => {});
   } else {
-    // Fallback: copy to clipboard
     navigator.clipboard.writeText(text).then(() => {
       showToast("📋 تم نسخ الرابط!");
     }).catch(() => {
@@ -283,24 +301,25 @@ function scrollToProduct(name) {
   let target = document.getElementById("product-" + name);
   if (target) {
     target.scrollIntoView({ behavior: "smooth", block: "center" });
-    target.style.transition  = "box-shadow 0.3s, border-color 0.3s";
-    target.style.boxShadow   = "0 0 40px rgba(201,150,42,0.45)";
-    target.style.borderColor = "#C9962A";
-    setTimeout(() => {
-      target.style.boxShadow   = "";
-      target.style.borderColor = "";
-    }, 1600);
+    let inner = target.querySelector(".card-front");
+    if (inner) {
+      inner.style.transition  = "box-shadow 0.3s, border-color 0.3s";
+      inner.style.boxShadow   = "0 0 40px rgba(201,150,42,0.5)";
+      inner.style.borderColor = "#C9962A";
+      setTimeout(() => {
+        inner.style.boxShadow   = "";
+        inner.style.borderColor = "";
+      }, 1600);
+    }
   }
 }
 
 // ===== OFFER COUNTDOWN TIMER =====
 function startOfferTimer() {
-  // Set timer end: next midnight from page load
   let saved = localStorage.getItem("offerTimerEnd");
   let end;
   if (saved) {
     end = Number(saved);
-    // If expired, reset to new 24h window
     if (end < Date.now()) {
       end = Date.now() + (24 * 60 * 60 * 1000);
       localStorage.setItem("offerTimerEnd", end);
@@ -313,7 +332,6 @@ function startOfferTimer() {
   function tick() {
     let diff = end - Date.now();
     if (diff <= 0) {
-      // Reset timer
       end = Date.now() + (24 * 60 * 60 * 1000);
       localStorage.setItem("offerTimerEnd", end);
       diff = end - Date.now();
@@ -335,6 +353,88 @@ function startOfferTimer() {
   setInterval(tick, 1000);
 }
 
+// ===== VIEWERS COUNTER — Realistic simulation =====
+// Each product has its own "base" viewer count that drifts naturally
+let viewerState = {};
+
+function initViewers() {
+  document.querySelectorAll(".viewers-count").forEach((el, idx) => {
+    let min = parseInt(el.dataset.min) || 50;
+    let max = parseInt(el.dataset.max) || 200;
+
+    // Start at a random realistic number within range
+    let base = Math.floor(min + Math.random() * (max - min));
+    viewerState[idx] = {
+      el,
+      current: base,
+      min,
+      max,
+      // Each counter has its own update rhythm (20–60 seconds)
+      nextUpdate: Date.now() + (20 + Math.random() * 40) * 1000,
+      // Trend: slightly more likely to tick up than down (people arriving)
+      trendBias: Math.random() > 0.4 ? 1 : -1
+    };
+
+    el.innerText = base;
+  });
+}
+
+function updateViewers() {
+  let now = Date.now();
+
+  Object.values(viewerState).forEach(state => {
+    if (now < state.nextUpdate) return;
+
+    // Change amount: 1 to 4, weighted towards smaller changes
+    let change = Math.ceil(Math.random() * 4);
+
+    // Direction: biased towards trend, but can flip
+    let direction = Math.random() < 0.6 ? state.trendBias : -state.trendBias;
+
+    // Occasionally reverse the trend naturally (people leaving / arriving in waves)
+    if (Math.random() < 0.15) state.trendBias = -state.trendBias;
+
+    let newVal = state.current + direction * change;
+
+    // Clamp within range with a soft bounce
+    if (newVal > state.max) {
+      newVal = state.max - Math.floor(Math.random() * 5);
+      state.trendBias = -1;
+    }
+    if (newVal < state.min) {
+      newVal = state.min + Math.floor(Math.random() * 5);
+      state.trendBias = 1;
+    }
+
+    state.current = newVal;
+    state.el.innerText = newVal;
+
+    // Next update in 15–50 seconds (randomized per element)
+    state.nextUpdate = now + (15 + Math.random() * 35) * 1000;
+  });
+}
+
+// ===== STAR RATING RENDER =====
+function renderStarRatings() {
+  document.querySelectorAll(".star-rating").forEach(el => {
+    let rating = parseFloat(el.dataset.rating) || 4.5;
+    let starsEl = el.querySelector(".stars");
+    if (!starsEl) return;
+
+    // Build partial star display using CSS trick with gold/grey
+    let full  = Math.floor(rating);
+    let half  = (rating - full) >= 0.5 ? 1 : 0;
+    let empty = 5 - full - half;
+
+    let html = "";
+    for (let i = 0; i < full;  i++) html += '<span style="color:#F5C842;text-shadow:0 0 8px rgba(245,200,66,0.5)">★</span>';
+    if (half)                        html += '<span style="color:#F5C842;opacity:0.6;text-shadow:0 0 8px rgba(245,200,66,0.3)">★</span>';
+    for (let i = 0; i < empty; i++) html += '<span style="color:rgba(245,200,66,0.2)">★</span>';
+
+    starsEl.innerHTML = html;
+  });
+}
+
 // ===== TOAST =====
 function showToast(msg) {
   let existing = document.querySelector(".toast-msg");
@@ -345,24 +445,24 @@ function showToast(msg) {
   t.innerText = msg;
 
   Object.assign(t.style, {
-    position:   "fixed",
-    top:        "50%",
-    left:       "50%",
-    transform:  "translate(-50%, -50%) scale(0.9)",
-    background: "#C9962A",
-    color:      "#1C0A00",
-    padding:    "14px 24px",
-    borderRadius: "12px",
-    fontWeight: "800",
-    fontSize:   "15px",
-    boxShadow:  "0 8px 30px rgba(201,150,42,0.4)",
-    zIndex:     "999999",
-    opacity:    "0",
-    transition: "opacity 0.25s, transform 0.25s",
-    fontFamily: "'Tajawal', sans-serif",
-    textAlign:  "center",
-    maxWidth:   "300px",
-    lineHeight: "1.5",
+    position:      "fixed",
+    top:           "50%",
+    left:          "50%",
+    transform:     "translate(-50%, -50%) scale(0.9)",
+    background:    "#C9962A",
+    color:         "#1C0A00",
+    padding:       "14px 24px",
+    borderRadius:  "12px",
+    fontWeight:    "800",
+    fontSize:      "15px",
+    boxShadow:     "0 8px 30px rgba(201,150,42,0.4)",
+    zIndex:        "999999",
+    opacity:       "0",
+    transition:    "opacity 0.25s, transform 0.25s",
+    fontFamily:    "'Tajawal', sans-serif",
+    textAlign:     "center",
+    maxWidth:      "300px",
+    lineHeight:    "1.5",
     pointerEvents: "none"
   });
 
@@ -392,7 +492,7 @@ window.onload = function() {
     if      (value < 60) bar.classList.add("low");
     else if (value < 80) bar.classList.add("medium");
     else if (value < 95) bar.classList.add("high");
-    else                  bar.classList.add("extreme");
+    else                 bar.classList.add("extreme");
 
     setTimeout(() => { bar.style.width = value + "%"; }, 400);
 
@@ -404,23 +504,35 @@ window.onload = function() {
     }, 15);
   });
 
-  // Sold Out badges + disable buttons
-  document.querySelectorAll(".card[data-status='sold-out']").forEach(card => {
-    let badge = document.createElement("div");
-    badge.className = "sold-out-badge";
-    badge.innerText = "❌ نفذ من المخزن";
-    let img = card.querySelector("img");
-    if (img) img.after(badge);
+  // ===== SOLD-OUT — كل اللي محتاج تعمله هو data-status="sold-out" على الـ card-wrapper =====
+  document.querySelectorAll(".card-wrapper").forEach(wrapper => {
+    if (wrapper.dataset.status !== "sold-out") return;
 
-    card.querySelectorAll(".neonBtn").forEach(btn => {
-      if (btn.innerText.includes("إضافة") || btn.innerText.includes("🛒")) {
-        btn.disabled        = true;
-        btn.style.opacity   = "0.35";
-        btn.style.cursor    = "not-allowed";
-        btn.style.pointerEvents = "none";
-      }
+    // إخفاء زرار الإضافة
+    wrapper.querySelectorAll(".add-btn").forEach(btn => {
+      btn.disabled = true;
+      btn.style.display = "none";
     });
+
+    // تعطيل الـ select
+    wrapper.querySelectorAll("select").forEach(sel => sel.disabled = true);
+
+    // إضافة بانر "نفذ" بعد الـ select أوتوماتيك لو مش موجود
+    if (!wrapper.querySelector(".sold-out-banner")) {
+      let banner = document.createElement("div");
+      banner.className = "sold-out-banner";
+      banner.innerHTML = '<span class="sold-out-icon">🚫</span><span>نفذ من المخزن</span>';
+      let sel = wrapper.querySelector("select");
+      if (sel) sel.after(banner);
+    }
   });
+
+  // Star ratings
+  renderStarRatings();
+
+  // Viewers counter
+  initViewers();
+  setInterval(updateViewers, 3000); // Check every 3 seconds, but each counter updates on its own timer
 
   // Offer timer
   startOfferTimer();
