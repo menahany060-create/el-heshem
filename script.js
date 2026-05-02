@@ -176,27 +176,42 @@ function send() {
   let rawTotal   = cart.reduce((s, c) => s + c.price * c.qty, 0);
   let finalTotal = rawTotal;
 
-  let msg = "🛒 *طلب جديد — بن الحشم* ☕\n\n";
-  msg += "👤 الاسم: " + name + "\n";
-  msg += "📞 الهاتف: " + phone + "\n";
-  msg += "📍 العنوان: " + address + "\n\n";
+  let msg = "🧾 *طلب جديد - بن الحشم*\n";
+msg += "─────────────────\n";
+
+msg += "👤 الاسم: " + name + "\n";
+msg += "📞 الموبايل: " + phone + "\n";
+msg += "📍 العنوان: " + address + "\n";
+
+msg += "─────────────────\n";
+msg += "📦 *تفاصيل الطلب:*\n";
+
+cart.forEach(c => {
+  let itemTotal = c.price * c.qty;
+
+  msg += "☕ " + c.name + "\n";
+  msg += "   🔢 الكمية: " + c.qty + "\n";
+  msg += "   💵 سعر الوحدة: " + c.price + " جنيه\n";
+  msg += "   💰 الإجمالي: " + itemTotal + " جنيه\n";
+  msg += "-----------------------------\n";
+});
+
+msg += "─────────────────\n";
+
+if (appliedPromo) {
+  let discountAmt = Math.round(rawTotal * appliedPromo.discount / 100);
+  finalTotal      = rawTotal - discountAmt;
+
+  msg += "🎟️ كود الخصم: " + appliedPromo.code + "\n";
+  msg += "💸 قيمة الخصم: -" + discountAmt + " جنيه\n";
   msg += "─────────────────\n";
+}
 
-  cart.forEach(c => {
-    msg += "☕ " + c.name + " × " + c.qty + " = " + (c.price * c.qty) + " جنيه\n";
-  });
+msg += "💰 *الإجمالي النهائي: " + finalTotal + " جنيه*\n";
+msg += "─────────────────\n";
 
-  msg += "─────────────────\n";
 
-  if (appliedPromo) {
-    let discountAmt = Math.round(rawTotal * appliedPromo.discount / 100);
-    finalTotal      = rawTotal - discountAmt;
-    msg += "🎟️ كود خصم (" + appliedPromo.code + "): -" + discountAmt + " جنيه\n";
-  }
-
-  msg += "💰 *الإجمالي: " + finalTotal + " جنيه*";
-
-  window.open("https://wa.me/201223136302?text=" + encodeURIComponent(msg));
+window.open("https://wa.me/201223136302?text=" + encodeURIComponent(msg));
 
   // Reset
   cart         = [];
