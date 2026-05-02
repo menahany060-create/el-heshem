@@ -299,7 +299,7 @@ body::before {
 /* ===== BESTSELLERS ===== */
 .bestsellers {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   padding: 10px 14px 24px;
   max-width: 600px;
